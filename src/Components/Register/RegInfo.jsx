@@ -2,7 +2,7 @@ import React from "react";
 
 function RegInfo(props) {
   return (
-    <div style={{ textAlign: "left", marginLeft: "140px" }}>
+    <div className="maintext">
       <h2 className="reg-head">Holiday Home Owner/Manager Dashboard</h2>
       <p>
         The Fastest, Simplest way to Manage your Holiday Rental Business. Sell

@@ -64,7 +64,7 @@ const LogIn = () => {
           <div
             style={{
               border: "1px solid gray",
-              width: "33%",
+              flex: "0.8",
               marginLeft: "60px",
             }}
           >
@@ -72,13 +72,7 @@ const LogIn = () => {
 
             <div>
               <br />
-              <label
-                style={{
-                  marginRight: "420px",
-                }}
-              >
-                E-mail
-              </label>
+              <label className="inputname">E-mail</label>
               <input
                 type="text"
                 placeholder="Email Address"
@@ -88,13 +82,7 @@ const LogIn = () => {
                 className="register-input5"
               />
               <br /> <br />
-              <label
-                style={{
-                  marginRight: "400px",
-                }}
-              >
-                Password
-              </label>
+              <label className="inputname">Password</label>
               <input
                 type="text"
                 placeholder="Confirm Password"
@@ -104,7 +92,7 @@ const LogIn = () => {
                 className="register-input7"
               />
               <p></p>
-              <a href style={{ marginRight: "340px", marginTop: "17px" }}>
+              <a href className="inputname2">
                 Forgot Password
               </a>
             </div>
@@ -143,7 +131,7 @@ const LogIn = () => {
                 backgroundColor: "#F8F8FE6",
               }}
             >
-              <button className="btn-register" onClick={handleRegister}>
+              <button className="btnregister2" onClick={handleRegister}>
                 Sign In
               </button>
               <br /> <br />

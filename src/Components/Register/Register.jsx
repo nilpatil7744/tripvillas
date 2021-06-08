@@ -3,6 +3,7 @@ import "../../Styles/Register.css";
 import RegInfo from "./RegInfo";
 import { useDispatch } from "react-redux";
 import { registeruser } from "../../Redux/Register/action";
+
 const Register = () => {
   const obj1 = {
     name2: "",
@@ -94,17 +95,17 @@ const Register = () => {
             alt=""
           />
           <p className="nav-text">Already registered ? </p>
-          <button className="nav-button-sign">Sign In</button>
+          <button className="nav-button-sign">Sign Up</button>
         </div>
         <br /> <br /> <br />
         <div style={{ display: "flex" }}>
-          <div>
+          <div classname="disnav">
             <RegInfo />
           </div>
           <div
             style={{
               border: "1px solid gray",
-              width: "33%",
+              flex: "0.8",
               marginLeft: "60px",
             }}
           >
@@ -168,6 +169,7 @@ const Register = () => {
                 name="email"
                 className="register-input5"
               />
+
               <br />
 
               <input

@@ -53,14 +53,17 @@ export const loginruser = (payload) => (dispatch) => {
       } else if (res.data.length > 0) {
         let data = res.data[0];
         dispatch(sucessLoginreq(data));
+
         if (payload.stay === true) {
+          console.log(data.email, data.id, data.name2);
           let localdata = {
-            email: payload.email,
-            password: payload.password,
+            email: data.email,
+            password: data.password,
             loginAuth: true,
             id: data.id,
-            username: data.username,
+            username: data.name2,
           };
+          console.log(localdata);
           saveData("account", localdata);
         }
         alert("You Have Succesfully logged in");
