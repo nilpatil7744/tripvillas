@@ -1,0 +1,134 @@
+.navbar {
+  width: 100%;
+  background-color: #333333;
+  display: flex;
+  justify-content: space-between;
+  height: 71px;
+}
+
+img {
+  padding: 0px 0px 0px 3px;
+  width: 12%;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.nav-text {
+  color: #ffffff;
+
+  margin-left: 63%;
+  width: 10%;
+  margin-top: 22px;
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.nav-button-sign {
+  margin-right: 6%;
+  width: 6%;
+  height: 33px;
+  margin-top: 16px;
+  background-color: #db4a67;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: whitesmoke;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* ////////////////// */
+
+.header-navbar {
+  padding: 13px;
+  background-color: #f8f8f8e6;
+  border-bottom: 1px solid rgb(163, 156, 156);
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.register-input {
+  padding: 5px;
+  width: 40%;
+  margin-right: 10%;
+}
+.register-input:hover {
+  outline: none;
+}
+
+.register-input2 {
+  padding: 5px;
+  width: 40%;
+}
+.register-input2:hover {
+  outline: none;
+}
+
+.register-input3 {
+  height: 20px;
+  margin-top: 20px;
+  width: 10%;
+  margin-left: 20px;
+}
+.register-input3:hover {
+  outline: none;
+}
+
+.register-input4 {
+  height: 20px;
+  margin-top: 20px;
+  width: 30%;
+  margin-left: 30px;
+}
+.register-input4:hover {
+  outline: none;
+}
+
+.register-input5 {
+  height: 20px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 6px;
+}
+.register-input5:hover {
+  outline: none;
+}
+
+.register-input6 {
+  height: 20px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 6px;
+}
+.register-input6:hover {
+  outline: none;
+}
+
+.register-input7 {
+  height: 20px;
+  margin-top: 20px;
+  width: 90%;
+  padding: 6px;
+}
+.register-input7:hover {
+  outline: none;
+}
+
+.btn-register {
+  background-color: #3b9ff3;
+  font-weight: bold;
+  color: whitesmoke;
+  width: 20%;
+  padding: 6px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-left: 72%;
+}
+
+/* 
+///////REGISTRATION PAGE TEXT */
+
+.reg-head {
+  color: #a90329;
+  font-family: 24px "Open Sans" Arial, Helvetica, sans-serif;
+}
