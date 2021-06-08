@@ -35,6 +35,50 @@ const Register = () => {
       [name]: val,
     });
   };
+
+  const handleRegister = () => {
+    console.log(query.name2);
+    if (
+      query.name2 !== "" &&
+      query.lastname !== "" &&
+      query.code2 !== "" &&
+      query.email !== "" &&
+      query.password !== "" &&
+      query.confirmpassword !== "" &&
+      query.terms !== false
+    ) {
+      let payload = {
+        name2: query.name2,
+        lastname: query.lastname,
+        code2: query.code2,
+        number: query.number,
+        email: query.email,
+        password: query.password,
+        confirmpassword: query.confirmpassword,
+        terms: true,
+      };
+
+      setQuery(payload);
+    } else {
+      if (query.terms === false) {
+        alert("Please Agree Terms and Conditions");
+      } else if (query.name2 === "") {
+        alert("Please Enter Your Name");
+      } else if (query.lastname === "") {
+        alert("Please Enter Your Last name");
+      } else if (query.code2 === "") {
+        alert("Please Enter Valid country code");
+      } else if (query.email === "") {
+        alert("Please Enter Your Email Address");
+      } else if (query.password === "") {
+        alert("Please Enter Your Password");
+      } else if (query.password === "") {
+        alert("Please Enter Your Password");
+      } else if (query.confirmpassword === "") {
+        alert(" Please Confirm-Password ");
+      }
+    }
+  };
   return (
     <div>
       <div>
@@ -175,7 +219,9 @@ const Register = () => {
                 backgroundColor: "#F8F8FE6",
               }}
             >
-              <button className="btn-register">REGISTER</button>
+              <button className="btn-register" onClick={handleRegister}>
+                REGISTER
+              </button>
               <br /> <br />
             </div>
           </div>
