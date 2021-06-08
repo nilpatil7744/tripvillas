@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../../Styles/Register.css";
 import RegInfo from "./RegInfo";
-
+import { useDispatch } from "react-redux";
+import { registeruser } from "../../Redux/Register/action";
 const Register = () => {
   const obj1 = {
     name2: "",
@@ -14,6 +15,8 @@ const Register = () => {
     terms: false,
   };
   const [query, setQuery] = useState(obj1);
+
+  const dispatch = useDispatch();
 
   const {
     name2,
@@ -59,6 +62,8 @@ const Register = () => {
       };
 
       setQuery(payload);
+      console.log(payload);
+      dispatch(registeruser(payload));
     } else {
       if (query.terms === false) {
         alert("Please Agree Terms and Conditions");
@@ -209,7 +214,7 @@ const Register = () => {
                 }}
               >
                 I accept all
-                <a href="https://www.tripvillas.com/">terms & conditions</a>
+                <a href="https://www.tripvillas.com/"> terms & conditions</a>
               </p>
             </div>
             <br />
