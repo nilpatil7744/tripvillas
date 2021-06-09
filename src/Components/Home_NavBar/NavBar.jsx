@@ -118,8 +118,8 @@ export const NavBar = () => {
                             <MenuItem sx={{width:'150px', paddingLeft:'40px'}} onClick={handleClose}>SIGN UP</MenuItem>
                         </Menu>
                         <Button style={{ marginLeft: '2%' }} color="inherit">AED <ArrowDropDownIcon /> </Button>
-                        <IconButton edge="start" sx={{ mr: 2 }} color="inherit" aria-label="menu">
-                            <Button style={{ color: 'white' }} onClick={toggleDrawer('right', true)}><MenuIcon /></Button>
+                        <IconButton edge="start" sx={{ mr: 2, color: 'white' }} onClick={toggleDrawer('right', true)} color="inherit" aria-label="menu">
+                            <MenuIcon />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
