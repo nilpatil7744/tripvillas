@@ -11,6 +11,7 @@ img {
   margin-top: 20px;
   margin-left: 20px;
   flex: 0.07;
+  cursor: pointer;
 }
 .nav-text {
   color: #ffffff;
@@ -33,6 +34,7 @@ img {
   border-radius: 5px;
   margin-left: 13px;
   flex: 0.08;
+  cursor: pointer;
 }
 
 /* ////////////////// */
@@ -122,6 +124,7 @@ img {
   padding: 8px;
   font-family: Helvetica, Arial, sans-serif;
   margin-left: 72%;
+  cursor: pointer;
 }
 
 .btnregister2 {
@@ -132,6 +135,7 @@ img {
   font-family: Helvetica, Arial, sans-serif;
   margin-left: 72%;
   width: 16%;
+  cursor: pointer;
 }
 
 .maintext {
@@ -170,6 +174,7 @@ img {
     border-radius: 5px;
     margin-left: 13px;
     flex: 0.3;
+    cursor: pointer;
   }
   .btnregister2 {
     background-color: #3b9ff3;
@@ -179,6 +184,7 @@ img {
     font-family: Helvetica, Arial, sans-serif;
     margin-left: 72%;
     width: 22%;
+    cursor: pointer;
   }
   .maintext {
     display: none;

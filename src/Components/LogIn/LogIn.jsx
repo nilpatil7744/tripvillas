@@ -3,6 +3,7 @@ import "../../Styles/Register.css";
 import RegInfo from "../Register/RegInfo";
 import { useDispatch } from "react-redux";
 import { loginruser } from "../../Redux/LoginAuth/action";
+import { Link } from "react-router-dom";
 const LogIn = () => {
   const obj2 = {
     loginemail: "",
@@ -52,9 +53,17 @@ const LogIn = () => {
           <img
             src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
             alt=""
+            className="img-register"
           />
           <p className="nav-text">Already registered ? </p>
-          <button className="nav-button-sign">Sign In</button>
+          <button className="nav-button-sign">
+            <Link
+              to="new-register"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Sign Up
+            </Link>
+          </button>
         </div>
         <br /> <br /> <br />
         <div style={{ display: "flex" }}>
