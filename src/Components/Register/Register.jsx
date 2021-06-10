@@ -64,6 +64,7 @@ const Register = () => {
 
       setQuery(payload);
       console.log(payload);
+      alert("Register successfully");
       dispatch(registeruser(payload));
     } else {
       if (query.terms === false) {

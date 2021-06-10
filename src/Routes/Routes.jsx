@@ -21,6 +21,9 @@ function Routes() {
         <Route exact path="/holiday-home">
           <InvestmentsHome />
         </Route>
+        <Route exact path="/real-estate-unlock">
+          <InvestmentsHome />
+        </Route>
 
         <Route>404 PAGE NOT FOUND</Route>
       </Switch>

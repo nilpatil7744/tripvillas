@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./Unlock.module.css";
 import { NavBar } from "../Investments/NavBar";
 import { Footer } from "../Investments/Footer";
+import { useSelector } from "react-redux";
 
 export const Unlock = () => {
   const [formState, setFromState] = useState("");
@@ -18,6 +19,15 @@ export const Unlock = () => {
     console.log(formState);
     alert("Submitted Successfully");
   };
+
+  const toog = useSelector((state) => state.login.loginAuth);
+  const { loginAuth } = useSelector((state) => state.login);
+
+  console.log(toog, "authhhh");
+
+  let techStack = localStorage.getItem("account");
+
+  console.log({ techStack });
   return (
     <>
       <NavBar />

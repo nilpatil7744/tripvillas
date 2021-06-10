@@ -6,11 +6,11 @@ import {
   LOGOUT_PAGE,
 } from "./actiontype";
 
-let isAuth = loadData("auth") || false;
-const initstate = {
-  isAuth: isAuth,
+const initstate = loadData("data") || {
+  isAuth: false,
   isloading: false,
   isError: false,
+  email: "",
   username: "",
 };
 export const LoginReducer = (state = initstate, action) => {
@@ -22,13 +22,18 @@ export const LoginReducer = (state = initstate, action) => {
         ...state,
         isloading: true,
       };
-    case LOGIN_SUCCESS:
-      saveData("auth", true);
-      return {
+    case LOGIN_SUCCESS: {
+      const datalocal = {
         ...state,
         isloading: false,
+        isAuth: true,
+        email: payload.email,
         username: payload.username,
       };
+
+      saveData("data", datalocal);
+      return datalocal;
+    }
     case LOGIN_FAILURE:
       return {
         ...state,

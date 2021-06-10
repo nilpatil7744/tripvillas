@@ -11,8 +11,8 @@ function loadData(key) {
     let data = localStorage.getItem(key);
     data = JSON.parse(data);
     return data;
-  } catch (err) {
-    return undefined;
+  } catch {
+    return false;
   }
 }
 

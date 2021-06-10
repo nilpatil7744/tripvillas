@@ -1,6 +1,12 @@
+import { Link } from "react-router-dom";
 import React from "react";
+import { useSelector } from "react-redux";
 import style from "./Body.module.css";
 export const InvestmentBody = () => {
+  const togg = useSelector((state) => state.login.isAuth);
+
+  console.log(togg, "nil");
+
   return (
     <div className={style.body_container}>
       <div>
@@ -94,7 +100,13 @@ export const InvestmentBody = () => {
                 </p>
               </div>
               <div className={style.image_button}>
-                <button>Unlock</button>
+                {togg ? (
+                  <Link to="/real-estate-unlock">
+                    <button>EXPLORE</button>
+                  </Link>
+                ) : (
+                  <button>Unlock</button>
+                )}
               </div>
             </div>
             <hr style={{ opacity: 0.5 }}></hr>
