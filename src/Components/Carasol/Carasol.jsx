@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/Carasol.css";
+import { Link } from "react-router-dom";
+import { Info } from "./Carasol";
 
 const Carasol = () => {
   const settings = {
@@ -12,14 +14,6 @@ const Carasol = () => {
     className: "slides",
   };
 
-  const Data = [
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-  ];
   return (
     <div style={{ marginTop: "150px" }}>
       <div
@@ -31,18 +25,23 @@ const Carasol = () => {
         <h2 style={{ fontWeight: "lighter" }}>Top Destinations</h2>
       </div>
       <Slider {...settings}>
-        {Data.map((item) => (
+        {Info.map((item, index) => (
           <div>
             <div className="bg-image">
-              <img
-                src={item}
-                style={{
-                  height: "180px",
-                  width: "300px",
-                }}
-                alt=""
-              />
-              <h2 className="bg-text">Blurred Background</h2>
+              <Link to={`${item.path}/${item.Ref_id}`}>
+                <img
+                  src={item.headimage}
+                  style={{
+                    height: "180px",
+                    width: "300px",
+                  }}
+                  alt=""
+                />
+              </Link>
+
+              <h4 className="bg-text">
+                {item.titile} <br /> <a href>{item.headtext} </a>
+              </h4>
             </div>
           </div>
         ))}

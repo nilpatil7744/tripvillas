@@ -40,7 +40,10 @@ export const NavBar = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 350 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 350,
+        background: "red",
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
