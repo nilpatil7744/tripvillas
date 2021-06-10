@@ -10,11 +10,11 @@ export const Footer = () => {
       <div className={style.container}>
         <div className={style.footer_bottom}>
           <div className={style.footer_bottom1}>
-            <a>
+            <a href>
               <img
                 src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
                 alt="Image Alternative text"
-                title="Image Title"
+                title="Title"
                 height="35px"
               ></img>
             </a>
@@ -44,25 +44,25 @@ export const Footer = () => {
           <div className={style.footer_bottom3}>
             <ul>
               <li>
-                <a href="">About Us</a>
+                <a href>About Us</a>
                 <br></br>
-                <a href="">Privacy Policy</a>
+                <a href>Privacy Policy</a>
                 <br></br>
-                <a href="">Terms of Use</a>
+                <a href>Terms of Use</a>
                 <br></br>
-                <a href="/faq">FAQs</a>
+                <a href>FAQs</a>
                 <br></br>
-                <a href="">Contact Us</a>
+                <a href>Contact Us</a>
                 <br></br>
-                <a href="">Property Managers</a>
+                <a href>Property Managers</a>
                 <br></br>
-                <a href="">Holiday Communities</a>
+                <a href>Holiday Communities</a>
               </li>
             </ul>
           </div>
           <div className={style.footer_bottom4}>
             <p>Have Questions ?</p>
-            <a>support@tripvillas.com</a>
+            <a href>support@tripvillas.com</a>
             <img
               src="https://d2vcelvjdj7n25.cloudfront.net/static/images/playstore.png"
               alt="palystore"
