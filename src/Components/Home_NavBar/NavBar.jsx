@@ -1,5 +1,4 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -10,29 +9,22 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import navStyles from './NavBar.module.css';
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         flexGrow: 1,
-//     },
-//     menuButton: {
-//         marginRight: theme.spacing(2),
-//     },
-//     title: {
-//         flexGrow: 1,
-//     },
-//     list: {
-//         width: 350,
-//     },
-//     fullList: {
-//         width: 'auto',
-//     },
-// }));
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 
 
 export const NavBar = () => {
-    // const classes = useStyles();
     const [state, setState] = React.useState({ right: false });
+    const [isSigned, setIsSigned] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -103,10 +95,31 @@ export const NavBar = () => {
                         <div style={{ height: '25px' }}>
                             <img style={{ height: '100%' }} src="https://d2v8elt324ukrb.cloudfront.net/static/riotuikit/images/logo.c72056a22f91.png" alt="TripVillas" />
                         </div>
-                        <Button style={{ marginLeft: '72%' }} color="inherit">NILESH <ArrowDropDownIcon /> </Button>
+                        <Button style={{ marginLeft: '72%' }}
+                            id="basic-button"
+                            aria-controls="basic-menu"
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                            color="inherit">
+                            {isSigned ? <div>(NILESH <ArrowDropDownIcon/> </div> : <PersonOutlineIcon/> }
+                        </Button>
+                        <Menu
+                        sx={{marginTop:"40px"}}
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                            }}
+                        >
+                            <MenuItem sx={{width:'150px', paddingLeft:'40px'}} onClick={handleClose}>SIGN IN</MenuItem>
+                            <MenuItem sx={{width:'150px', paddingLeft:'40px'}} onClick={handleClose}>SIGN UP</MenuItem>
+                        </Menu>
                         <Button style={{ marginLeft: '2%' }} color="inherit">AED <ArrowDropDownIcon /> </Button>
-                        <IconButton edge="start" sx={{ mr: 2 }} color="inherit" aria-label="menu">
-                            <Button style={{ color: 'white' }} onClick={toggleDrawer('right', true)}><MenuIcon /></Button>
+                        <IconButton edge="start" sx={{ mr: 2, color: 'white' }} onClick={toggleDrawer('right', true)} color="inherit" aria-label="menu">
+                            <MenuIcon />
                         </IconButton>
                     </Toolbar>
                 </AppBar>

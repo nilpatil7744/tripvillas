@@ -63,7 +63,7 @@ export const HomeSearch = () => {
                                         onChange={handleGuest}
                                     >
                                         {new Array(50).fill(0).map((item, index) => {
-                                            return <MenuItem value={index + 1}>{index === 0 ? `${index + 1} guest` : `${index + 1} guests`}</MenuItem>
+                                            return <MenuItem key={`${index}gsts`} value={index + 1}>{index === 0 ? `${index + 1} guest` : `${index + 1} guests`}</MenuItem>
                                         })}
                                     </Select>
                                 </FormControl>

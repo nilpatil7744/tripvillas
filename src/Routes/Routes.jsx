@@ -1,9 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { Register } from "../Components/Register/Register";
-
-import { LogIn } from "../Components/LogIn/LogIn";
 import { Home } from "../Components/Home/Home";
+import { LogIn } from "../Components/LogIn/LogIn";
 
 function Routes() {
   return (
