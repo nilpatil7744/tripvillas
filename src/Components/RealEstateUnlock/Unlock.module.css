@@ -1,0 +1,76 @@
+body {
+  color: #737373;
+  font-family: "Roboto", arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  font-weight: 400;
+}
+h1 {
+  font-family: "Roboto", arial, helvetica, sans-serif;
+  margin-top: 0;
+  font-weight: 300;
+  color: #565656;
+  line-height: 1.3em;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.h1s {
+  font-weight: 600;
+  color: #424242;
+  font-size: 40px;
+  line-height: 1.2em;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 3%;
+}
+.listing_text {
+  color: #424242;
+  line-height: 24px;
+  margin-top: 5px;
+  font-size: medium;
+  opacity: 0.9;
+}
+.form_header {
+  padding: 2%;
+}
+.form_header h1 {
+  font-weight: 600;
+  color: #424242;
+  font-size: 1.3rem;
+  line-height: 28px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+.option_container {
+  display: flex;
+  justify-content: center;
+}
+.form_header input {
+  height: 25px;
+  width: 25px;
+}
+.form_header label {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 4px 10px;
+  opacity: 0.8;
+}
+.form_button input {
+  background: #30bbb1;
+  color: #efefef;
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  font-size: large;
+  text-align: center;
+  margin: 8%;
+  border-radius: 5px;
+}
+.form_button input:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
