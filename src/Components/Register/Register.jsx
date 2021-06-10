@@ -90,11 +90,13 @@ const Register = () => {
       <div>
         <div className="navbar">
           <br /> <br />
-          <img
-            src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
-            alt=""
-            className="img-register"
-          />
+          <Link to="/">
+            <img
+              src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
+              alt=""
+              className="img-register"
+            />
+          </Link>
           <p className="nav-text">Already registered ? </p>
           <button className="nav-button-sign">
             <Link
