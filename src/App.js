@@ -1,12 +1,8 @@
-// import { InvestmentsHome } from "./Components/Investments/InvestmentsHome";
-
-import { Unlock } from "./Components/RealEstateUnlock/Unlock";
-
+import { Routes } from "./Routes/Routes";
 function App() {
   return (
     <div className="App">
-      {/* <InvestmentsHome /> */}
-      <Unlock />
+      <Routes />
     </div>
   );
 }
