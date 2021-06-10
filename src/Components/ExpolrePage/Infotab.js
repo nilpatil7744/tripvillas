@@ -26,3 +26,66 @@ export const Infotab = [
     path: "/",
   },
 ];
+
+export const Infotab2 = [
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+  {
+    img1: "https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/growth.svg",
+    text1: "Low Cost High Appreciation",
+    path: "/",
+  },
+];
