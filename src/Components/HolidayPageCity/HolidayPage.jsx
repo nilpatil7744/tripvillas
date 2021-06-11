@@ -25,6 +25,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/HoliadayPage.css";
 import { Link } from "react-router-dom";
 import { Info } from "../Carasol/Carasol";
+import GoogleMap1 from "./MapGoogle/GoogleMap";
 
 function HolidayPage(props) {
   const [value, setValue] = useState([null, null]);
@@ -190,6 +191,8 @@ function HolidayPage(props) {
 
       {/* 
       .////////////////////// */}
+
+      <GoogleMap1 />
     </div>
   );
 }
