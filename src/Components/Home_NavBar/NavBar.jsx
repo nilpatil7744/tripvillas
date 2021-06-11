@@ -13,11 +13,19 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
 export const NavBar = () => {
   const [state, setState] = React.useState({ right: false });
   const [isSigned, setIsSigned] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  ////////////////
+
+  const [editModalIsOpen, setEditModalIsOpen] = React.useState(false);
+  const [deleteModalIsOpen, setDeleteModalIsOpen] = React.useState(false);
+
+  ////////////////////
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -157,18 +165,34 @@ export const NavBar = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem
-                sx={{ width: "150px", paddingLeft: "40px" }}
-                onClick={handleClose}
-              >
+              <MenuItem sx={{ width: "150px", paddingLeft: "40px" }}>
                 SIGN IN
               </MenuItem>
               <MenuItem
                 sx={{ width: "150px", paddingLeft: "40px" }}
-                onClick={handleClose}
+                onClick={() => setEditModalIsOpen(true)}
               >
                 SIGN UP
               </MenuItem>
+              <Modal
+                isOpen={editModalIsOpen}
+                onRequestClose={() => setEditModalIsOpen(false)}
+                style={{ height: "200px" }}
+              >
+                <h2>Edit Client</h2>
+                <hr />
+                <div>
+                  <h4>Change name</h4>
+                  <input type="text" />
+                </div>
+                <hr />
+                <div>
+                  <button onClick={() => setEditModalIsOpen(false)}>
+                    Cancel
+                  </button>
+                  <button>SAVE</button>
+                </div>
+              </Modal>
             </Menu>
             <Button style={{ marginLeft: "2%" }} color="inherit">
               AED <ArrowDropDownIcon />{" "}

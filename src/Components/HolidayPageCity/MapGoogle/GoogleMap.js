@@ -19,12 +19,33 @@ function Map() {
       >
         {Info.map((mark) => (
           <Marker
+            key={mark.id}
             position={{
               lat: mark.latitude,
               lng: mark.longitude,
             }}
+            onClick={() => {
+              setSelectedPark(mark);
+            }}
           />
         ))}
+        {selectedPark && (
+          <InfoWindow
+            position={{
+              lat: selectedPark.latitude,
+              lng: selectedPark.longitude,
+            }}
+            onClick={() => setSelectedPark(null)}
+          >
+            <div style={{ height: "150px", width: "150px" }}>
+              <img
+                src={selectedPark.headimage}
+                alt=""
+                style={{ height: "90px", width: "150px" }}
+              />
+            </div>
+          </InfoWindow>
+        )}
       </GoogleMap>
       ;
     </div>
@@ -44,7 +65,7 @@ function GoogleMap1() {
         }}
       >
         <MapWrapped
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBWNQLRv3EWDkqWisSDetL5-7iuJYCGLfM`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyArhGxx109N8JbF0egIJ28Ag2PUs0YW_n8`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
