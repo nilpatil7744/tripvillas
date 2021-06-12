@@ -5,6 +5,7 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import LocalOfferOutlinedIcon from '@material-ui/icons/LocalOfferOutlined';
 import TocOutlinedIcon from '@material-ui/icons/TocOutlined';
+import { IndiPropPricing } from './IndiPropPricing';
 
 export const IndividualProperty = () => {
     return (
@@ -304,20 +305,7 @@ export const IndividualProperty = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div className={propertyStyles.individualPropPricingMain}>
-                    </div>
-                    <div className={propertyStyles.individualPropPricingSUB}>
-                        <div className={propertyStyles.individualPropTopBreadcrumbDiv}>
-                            <div className={propertyStyles.individualPropStartingPrice}>
-                                <span style={{ fontSize: '0.35em', color: '#484848', display: 'block', fontFamily:'Roboto ,sans-serif'}}>Starting</span>
-                                ₹
-                                <span style={{fontFamily:'Roboto ,sans-serif' }}>9999</span>
-                                <span style={{ fontSize: '0.35em', color: '#484848', display: 'inline-block', fontFamily:'Roboto ,sans-serif', paddingLeft: '15px' }}>per night</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <IndiPropPricing/>
             </div>
         </div>
     )
