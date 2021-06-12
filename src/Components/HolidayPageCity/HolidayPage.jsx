@@ -171,7 +171,7 @@ function HolidayPage(props) {
           {Info.map((item, index) => (
             <div>
               <div className="bg-image22">
-                <Link to={`${item.path}/${item.Ref_id}`}>
+                <Link to={`${item.path}/${item.Ref_No}/alor`}>
                   <img
                     src={item.headimage}
                     style={{

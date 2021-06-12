@@ -17,7 +17,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/goa-11.f1c86735cec4.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 77963212,
   },
   {
@@ -38,7 +38,7 @@ export const Info = [
     headimage:
       "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_640x960/25531352/af0cacaaa2c011e7830d0a92a929817e_mob_thumbnail.jpeg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 77963215,
   },
   {
@@ -59,7 +59,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/phuket-72.9d6f9e3883be.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 77063212,
   },
   {
@@ -80,7 +80,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kandy-5144.2adb0839ea6a.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 77963254,
   },
   {
@@ -101,7 +101,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/koh-samui-5119.82e8a6c9cf8b.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 77123212,
   },
   {
@@ -122,7 +122,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/kerala-18.c082ce41a521.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 7796809890,
   },
   {
@@ -143,7 +143,7 @@ export const Info = [
     headimage:
       "https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/home-small/pattaya-103.efcc9f2f0593.jpg",
     headtext: "Vacation Rental",
-    path: "/holiday-homes/:username",
+    path: "/holiday-homes",
     Ref_No: 779869869,
   },
   {
