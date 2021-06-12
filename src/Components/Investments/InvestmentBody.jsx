@@ -1,7 +1,13 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+
+import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import style from "./Body.module.css";
 import Data from "./data.json";
 export const InvestmentBody = () => {
+  const togg = useSelector((state) => state.login.isAuth);
+
+  console.log(togg, "nil");
   const [data] = useState(Data);
 
   return (

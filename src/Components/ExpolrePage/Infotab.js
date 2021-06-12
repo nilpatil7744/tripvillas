@@ -10,7 +10,7 @@ export const Infotab = [
     text3: "Guaranteed To Produce Income",
     text4: "We Designed Floor Plans",
     bttn: "EXPLORE INVESTMENT OPPORTUNITIES",
-    path: "/",
+    path: "/holiday-home",
   },
   {
     headline: "Are You A Holiday Home Owner/Manager?",

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 import { saveData } from "../../utils/localStorage";
 
 import {
@@ -52,6 +53,7 @@ export const loginruser = (payload) => (dispatch) => {
         dispatch(failureLoginreq());
       } else if (res.data.length > 0) {
         let data = res.data[0];
+        console.log(data, "paylo");
         dispatch(sucessLoginreq(data));
 
         if (payload.stay === true) {
@@ -64,8 +66,11 @@ export const loginruser = (payload) => (dispatch) => {
             username: data.name2,
           };
           console.log(localdata);
-          saveData("account", localdata);
+          saveData("info", localdata);
+
+          console.log(saveData, "local");
         }
+
         alert("You Have Succesfully logged in");
       }
     })
