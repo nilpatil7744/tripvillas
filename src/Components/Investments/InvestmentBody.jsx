@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Body.module.css";
+import Data from "./data.json";
 export const InvestmentBody = () => {
+  const [data] = useState(Data);
+
   return (
     <div className={style.body_container}>
       <div>
@@ -74,1489 +77,159 @@ export const InvestmentBody = () => {
       </div>
       <div className={style.unlock_div_container}>
         <h1 className={style.h1s}>Current Opportunities</h1>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div className={style.image_grid}>
+        <div className={style.image_div}>
+          <img
+            src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
+            alt="web-image"
+            height="380px"
+            width="350px"
+          />
         </div>
-        <div className={style.current_div}>
-          <div className={style.current_box}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/irr.svg"
-              alt="logo1"
-              height="40px"
-              width="40px"
-            />
-            <h3>What Is IRR?</h3>
-            <p>
-              The total return from the property on an annual basis considering
-              the property is sold after 7 years of the initial investment -
-              this captures the total income to you from both rentals and
-              appreciation of the property.
-            </p>
+        <div>
+          <div style={{ display: "flex" }}>
+            <div className={style.image_content}>
+              <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
+              <h1 className={style.blurrytext}>Reputed Developer</h1>
+              <p className={style.sub_text}>
+                Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
+                Resort, via Atul, Valsad - 396020
+              </p>
+            </div>
+            <div className={style.image_button}>
+              <button>Unlock</button>
+            </div>
           </div>
-          <div className={style.current_box}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/interest.svg"
-              alt="logo1"
-              height="40px"
-              width="40px"
-            />
-            <h3>What Is Yield?</h3>
-            <p>
-              The rental income generated from the property as a %age of its
-              total purchase price inclusive of Interior Costs, Registration and
-              Stamp Duties after deducting all Operating costs, Commissions and
-              Home Owner Association Fees.
-            </p>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
+          <hr style={{ opacity: 0.5 }}></hr>
           <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+              }}
+            >
+              <h2>
+                ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
+              </h2>
 
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
+              <h2>
+                129+
+                <p className={style.sub_text}>Homes In A Community</p>
+              </h2>
+              <h2>
+                5.15%
+                <p className={style.sub_text}>Target Yield</p>
+              </h2>
+              <h2>
+                17.23%
+                <p className={style.sub_text}>Target 7 Year IRR</p>
+              </h2>
             </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
             <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={style.image_grid}>
-          <div className={style.image_div}>
-            <img
-              src="https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/20/clubhouse-page-header_web_image.jpeg"
-              alt="web-image"
-              height="385px"
-              width="350px"
-            />
-          </div>
-          <div>
-            <div style={{ display: "flex" }}>
-              <div className={style.image_content}>
-                <h1 className={style.blurrytext}>Tripvillas Managed Project</h1>
-                <h1 className={style.blurrytext}>Reputed Developer</h1>
-                <p className={style.sub_text}>
-                  Mangalyam Meadows Chanvai Rabda Road, Chanvai Village, Nr. AXN
-                  Resort, via Atul, Valsad - 396020
-                </p>
-              </div>
-              <div className={style.image_button}>
-                <button>Unlock</button>
-              </div>
-            </div>
-            <hr style={{ opacity: 0.5 }}></hr>
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <h2>
-                  ₹ 1.2 Cr<p className={style.sub_text}>Starting Price</p>
-                </h2>
-
-                <h2>
-                  129+
-                  <p className={style.sub_text}>Homes In A Community</p>
-                </h2>
-                <h2>
-                  5.15%
-                  <p className={style.sub_text}>Target Yield</p>
-                </h2>
-                <h2>
-                  17.23%
-                  <p className={style.sub_text}>Target 7 Year IRR</p>
-                </h2>
-              </div>
-              <div>
-                <p className={style.blurrytext}>
-                  Please unlock these details by signing in &amp; filling in the
-                  necessary information. You will be able to see detailed
-                  analysis for every project.
-                </p>
-              </div>
+              <p className={style.blurrytext}>
+                Please unlock these details by signing in &amp; filling in the
+                necessary information. You will be able to see detailed analysis
+                for every project.
+              </p>
             </div>
           </div>
         </div>
       </div>
+      <div className={style.current_div}>
+        <div className={style.current_box}>
+          <img
+            src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/irr.svg"
+            alt="logo1"
+            height="40px"
+            width="40px"
+          />
+          <h3>What Is IRR?</h3>
+          <p>
+            The total return from the property on an annual basis considering
+            the property is sold after 7 years of the initial investment - this
+            captures the total income to you from both rentals and appreciation
+            of the property.
+          </p>
+        </div>
+        <div className={style.current_box}>
+          <img
+            src="https://d2vcelvjdj7n25.cloudfront.net/newhome/icons/interest.svg"
+            alt="logo1"
+            height="40px"
+            width="40px"
+          />
+          <h3>What Is Yield?</h3>
+          <p>
+            The rental income generated from the property as a %age of its total
+            purchase price inclusive of Interior Costs, Registration and Stamp
+            Duties after deducting all Operating costs, Commissions and Home
+            Owner Association Fees.
+          </p>
+        </div>
+      </div>
+      {data.investment.map((item) => {
+        return (
+          <div className={style.image_grid}>
+            <div className={style.image_div}>
+              <img
+                src={item.imageUrl}
+                alt="web-image"
+                height="380px"
+                width="350px"
+              />
+            </div>
+            <div>
+              <div style={{ display: "flex" }}>
+                <div className={style.image_content}>
+                  <h1 className={style.blurrytext}>
+                    Tripvillas Managed Project
+                  </h1>
+                  <h1 className={style.blurrytext}>Reputed Developer</h1>
+                  <p className={style.sub_text}>{item.title}</p>
+                </div>
+                <div className={style.image_button}>
+                  <button>Unlock</button>
+                </div>
+              </div>
+              <hr style={{ opacity: 0.5 }}></hr>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                  }}
+                >
+                  <h2>
+                    {item.starting_price}
+                    <p className={style.sub_text}>Starting Price</p>
+                  </h2>
+
+                  <h2>
+                    {item.homes}
+                    <p className={style.sub_text}>Homes In A Community</p>
+                  </h2>
+                  <h2>
+                    {item.target}
+                    <p className={style.sub_text}>Target Yield</p>
+                  </h2>
+                  <h2>
+                    {item.year_irr}
+                    <p className={style.sub_text}>Target 7 Year IRR</p>
+                  </h2>
+                </div>
+                <div>
+                  <p className={style.blurrytext}>
+                    Please unlock these details by signing in &amp; filling in
+                    the necessary information. You will be able to see detailed
+                    analysis for every project.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
