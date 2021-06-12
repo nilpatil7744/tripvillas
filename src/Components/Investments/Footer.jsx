@@ -1,9 +1,6 @@
 import React from "react";
 import style from "./Footer.module.css";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import PinterestIcon from "@material-ui/icons/Pinterest";
+
 export const Footer = () => {
   return (
     <footer>
@@ -23,12 +20,6 @@ export const Footer = () => {
               which come with resident caretakers. This allows you to holiday in
               comfort, style and without rushing your holiday.
             </p>
-            <li>
-              <FacebookIcon />
-              <TwitterIcon />
-              <LinkedInIcon />
-              <PinterestIcon />
-            </li>
           </div>
           <div className={style.footer_bottom2}>
             <p>Incredible Offers on the Best Villas</p>
