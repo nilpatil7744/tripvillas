@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { Register } from "../Components/Register/Register";
-import { Home } from "../Components/Home/Home";
+import {Home} from '../Components/Home/Home';
 import { LogIn } from "../Components/LogIn/LogIn";
+import { IndividualProperty } from "../Components/Individual_Property/IndividualProperty";
 import { InvestmentsHome } from "../Components/Investments/InvestmentsHome";
 import HolidayPage from "../Components/HolidayPageCity/HolidayPage";
 import { Unlock } from "../Components/RealEstateUnlock/Unlock";
@@ -20,6 +21,9 @@ function Routes() {
         </Route>
         <Route exact path="/new-login">
           <LogIn />
+        </Route>
+        <Route exact path="/hotel/:id">
+          <IndividualProperty />
         </Route>
         <Route exact path="/holiday-home">
           <InvestmentsHome />
