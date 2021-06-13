@@ -50,11 +50,13 @@ const LogIn = () => {
       <div>
         <div className="navbar">
           <br /> <br />
-          <img
-            src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
-            alt=""
-            className="img-register"
-          />
+          <Link to="/">
+            <img
+              src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/img/logo.b01085f692cb.png"
+              alt=""
+              className="img-register"
+            />
+          </Link>
           <p className="nav-text">Already registered ? </p>
           <button className="nav-button-sign">
             <Link
@@ -81,7 +83,9 @@ const LogIn = () => {
 
             <div>
               <br />
-              <label className="inputname">E-mail</label>
+              <label className="inputname" style={{ marginLeft: "10px" }}>
+                E-mail
+              </label>
               <input
                 type="text"
                 placeholder="Email Address"
@@ -91,7 +95,9 @@ const LogIn = () => {
                 className="register-input5"
               />
               <br /> <br />
-              <label className="inputname">Password</label>
+              <label className="inputname" style={{ marginLeft: "19px" }}>
+                Password
+              </label>
               <input
                 type="text"
                 placeholder="Confirm Password"
@@ -101,7 +107,7 @@ const LogIn = () => {
                 className="register-input7"
               />
               <p></p>
-              <a href className="inputname2">
+              <a href className="inputname2" style={{ marginLeft: "19px" }}>
                 Forgot Password
               </a>
             </div>

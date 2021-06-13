@@ -1,0 +1,181 @@
+{
+  "investment": [
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/21/unnamed_web_image.jpeg",
+      "title": "The White Villas Kasara S.N 2/1A, S.N. 3/2, Kasara Bk,Tal. Shahapur Dist.The, Thane, Maharashtra 421",
+      "starting_price": "₹ 66 Lakhs",
+      "homes": "45+",
+      "target": "4.36%",
+      "year_irr": "6.99%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/22/cottage-type-1_web_image.jpeg",
+      "title": "Chikkanagavalli, Karnataka 562104",
+      "starting_price": "₹ 1.2 Cr",
+      "homes": "110+",
+      "target": "6.35%",
+      "year_irr": "12.25%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/23/01_web_image.jpeg",
+      "title": "Expat Sparsh, Naldhe Village, 2km from Kashele Village, Karjat - 410201, District Raigarh",
+      "starting_price": "₹ 25 Lakhs",
+      "homes": "200+",
+      "target": "4.69%",
+      "year_irr": "6.99%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/24/cc-2_web_image.jpeg",
+      "title": "Near Nandhi Hills, Melekote Cross, Tubugere Hobli, Doddaballapura Taluk, Bangalore, Karnataka 561205",
+      "starting_price": "₹ 39 Lakhs",
+      "homes": "47+",
+      "target": "3.45%",
+      "year_irr": "5.98%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/25/whatsapp-image-2020-10-12-at-113415-am_web_image.jpeg",
+      "title": "13/2, Thanisandra Main Road Adjacent to Manyata Tech Park, Bengaluru, Karnataka 560077",
+      "starting_price": "₹ 1.4 Cr",
+      "homes": "54+",
+      "target": "3.95%",
+      "year_irr": "15.97%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproperty/photos/web-image/212/dsc_9958_web_image.jpeg",
+      "title": "Chondhi Rd, Mapgaon, Maharashtra 402201",
+      "starting_price": "₹ 70 Lakhs",
+      "homes": "128+",
+      "target": "5.32%",
+      "year_irr": "8.15%"
+    },
+
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/3/1_web_image.jpeg",
+      "title": "Dabolim, Goa 403726",
+      "starting_price": "₹ 24 Lakhs",
+      "homes": "639+",
+      "target": "5.12%",
+      "year_irr": "8.15%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/8/340e1fef-f066-4c48-a34a-0bacf010f7b3_web_image.jpeg",
+      "title": "Dabolim, Goa",
+      "starting_price": "₹ 35 Lakhs",
+      "homes": "200+",
+      "target": "5.06%",
+      "year_irr": "11.93%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/16/dreamz-goa-elevation-26028508_web_image.jpeg",
+      "title": "Shiroda",
+      "starting_price": "₹ 23 Lakhs",
+      "homes": "144+",
+      "target": "6.51%",
+      "year_irr": "11.35%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/17/whatsapp-image-2020-07-31-at-32511-pm_web_image.jpeg",
+      "title": "Pawasalwadi, Maharashtra",
+      "starting_price": "₹ 55 Lakhs",
+      "homes": "107+",
+      "target": "6.34%",
+      "year_irr": "15.91%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/14/photo-24126_web_image.jpeg",
+      "title": "Verem, Nerul Road, Nerul, Goa",
+      "starting_price": "₹ 1.0 Cr",
+      "homes": "128+",
+      "target": "4.17%",
+      "year_irr": "8.15%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/15/p_web_image.jpeg",
+      "title": "Vidhyanagar Colony, Chicalim, Goa",
+      "starting_price": "₹ 68 Lakhs",
+      "homes": "48+",
+      "target": "7.35%",
+      "year_irr": "8.15%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/4/a69b0d52-3c90-4a70-a157-e305a15c2895_web_image.jpeg",
+      "title": "Shahapur, Thane",
+      "starting_price": "₹ 90 Lakhs",
+      "homes": "43+",
+      "target": "5.39%",
+      "year_irr": "6.99%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/5/floor-detail1-madurai_web_image.jpeg",
+      "title": "Madurai, Tamil Nadu",
+      "starting_price": "₹ 32 Lakhs",
+      "homes": "61+",
+      "target": "6.56%",
+      "year_irr": "10.95%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/6/20334341_web_image.jpeg",
+      "title": "Oragadam, Chennai",
+      "starting_price": "₹ 40 Lakhs",
+      "homes": "62+",
+      "target": "3.86%",
+      "year_irr": "6.99%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/7/villa_web_image.jpeg",
+      "title": "Jadcherla, Hyderabad",
+      "starting_price": "₹ 35 Lakhs",
+      "homes": "155+",
+      "target": "4.86%",
+      "year_irr": "6.74%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/9/maxresdefault_web_image.jpeg",
+      "title": "Madurai, Tamil Nadu",
+      "starting_price": "₹ 17 Lakhs",
+      "homes": "207+",
+      "target": "4.89%",
+      "year_irr": "7.21%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/10/home-landing-page-image_web_image.jpeg",
+      "title": "Wada, Maharastra",
+      "starting_price": "₹ 13 Lakhs",
+      "homes": "264+",
+      "target": "3.12%",
+      "year_irr": "5.75%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/11/com_1_web_image.jpeg",
+      "title": "Khopoli Pali Road, Maharsatra",
+      "starting_price": "₹ 15 Lakhs",
+      "homes": "350+",
+      "target": "4.73%",
+      "year_irr": "6.99%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/13/clubhousenight_web_image.jpeg",
+      "title": "Khopoli Pali Road, Maharsatra",
+      "starting_price": "₹ 39 Lakhs",
+      "homes": "128+",
+      "target": "8.36%",
+      "year_irr": "16.25%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/1/zuari_garden_pond_evening-new-m_web_image.jpeg",
+      "title": "Mysore, Karnataka",
+      "starting_price": "₹ 49 Lakhs",
+      "homes": "59+",
+      "target": "5.36%",
+      "year_irr": "7.81%"
+    },
+    {
+      "imageUrl": "https://d2vcelvjdj7n25.cloudfront.net/media/saleproject/photos/web-image/2/18979_web_image.jpeg",
+      "title": "Zuari Nagar, Goa",
+      "starting_price": "₹ 57 Lakhs",
+      "homes": "95+",
+      "target": "4.55%",
+      "year_irr": "6.32%"
+    }
+  ]
+}

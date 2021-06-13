@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import homeSearchStyles from "./HomeSearch.module.css";
+import { useParams } from "react-router-dom";
+
+import { NavBar } from "../Home_NavBar/NavBar";
+
+///////////////////////////
+
+import homeSearchStyles from "../Home/Home_Search/HomeSearch.module.css";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@material-ui/core/TextField";
 import DateRangePicker from "@material-ui/lab/DateRangePicker";
@@ -11,7 +17,17 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-export const HomeSearch = () => {
+////////////////////
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../../Styles/HoliadayPage.css";
+import { Link } from "react-router-dom";
+import { Info } from "../Carasol/Carasol";
+import GoogleMap1 from "./MapGoogle/GoogleMap";
+
+function HolidayPage(props) {
   const [value, setValue] = useState([null, null]);
   const [guest, setGuest] = useState("");
 
@@ -19,20 +35,50 @@ export const HomeSearch = () => {
     setGuest(event.target.value);
   };
 
+  let id = useParams();
+
+  console.log(id, "idddd");
+
+  /////////// Carasol
+
+  const settings = {
+    infinite: true,
+    speed: 1200,
+    slidesToShow: 4,
+    slidesToScroll: 5,
+    className: "slides",
+  };
+
+  ////////////////
   return (
-    <>
-      <div className={homeSearchStyles.mainDiv}>
-        <img
-          src="https://d2v8elt324ukrb.cloudfront.net/static/new_template/media/Pimal2-1.2d5d237dbd32.jpg"
-          alt="backGround"
-        />
-        <div className={homeSearchStyles.textDiv}>
-          <h1 style={{ fontWeight: "bold", color: "white" }}>
-            Book <span style={{ textDecoration: "line-through" }}>Hotels</span>{" "}
-            Vacation Rentals <br /> Top Holiday Homes - Villas, Apartments &
-            Homestays
+    <div>
+      <NavBar />
+      {/* /////////////// */}
+
+      <div
+        style={{
+          border: "3px solid whitesmoke",
+          height: "250px",
+          marginTop: "40px",
+          width: "80%",
+          marginLeft: "140px",
+          backgroundColor: "white",
+        }}
+      >
+        <div
+          className={homeSearchStyles.textDiv}
+          style={{ marginTop: "-130px" }}
+        >
+          <h1 style={{ fontsize: "22.5px", color: "black" }}>
+            Goa Holiday Homes <br />
+            <a href style={{ fontsize: "8.5px", color: "#33333" }}>
+              We have 300 Vacation Rentals - search by dates for availability
+            </a>
           </h1>
-          <div className={homeSearchStyles.searchWidget}>
+          <div
+            className={homeSearchStyles.searchWidget}
+            style={{ border: "none" }}
+          >
             <div className={homeSearchStyles.inp_location}>
               <span className={homeSearchStyles.searchIcon}>
                 <SearchIcon />
@@ -107,6 +153,48 @@ export const HomeSearch = () => {
           </div>
         </div>
       </div>
-    </>
+
+      {/* ////////////////// */}
+
+      {/* /////////CARASOL <<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
+
+      <div style={{ marginTop: "150px" }}>
+        <div
+          style={{
+            textAlign: "left",
+            marginLeft: "20px",
+          }}
+        >
+          <h2 style={{ fontWeight: "lighter" }}>Holiday Homes</h2>
+        </div>
+        <Slider {...settings}>
+          {Info.map((item, index) => (
+            <div>
+              <div className="bg-image22">
+                <Link to={`${item.path}/${item.Ref_No}/alor`}>
+                  <img
+                    src={item.headimage}
+                    style={{
+                      height: "180px",
+                      width: "317.3px",
+                    }}
+                    alt=""
+                  />
+                </Link>
+                <h5>Ref id #{item.Ref_No}</h5>
+                <h4 className="bg-text22">{item.titile}</h4>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* 
+      .////////////////////// */}
+
+      <GoogleMap1 />
+    </div>
   );
-};
+}
+
+export default HolidayPage;

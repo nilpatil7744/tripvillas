@@ -4,13 +4,15 @@ import { Register } from "../Components/Register/Register";
 import {Home} from '../Components/Home/Home';
 import { LogIn } from "../Components/LogIn/LogIn";
 import { IndividualProperty } from "../Components/Individual_Property/IndividualProperty";
+import { InvestmentsHome } from "../Components/Investments/InvestmentsHome";
+import HolidayPage from "../Components/HolidayPageCity/HolidayPage";
 
 function Routes() {
   return (
     <div>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route exact path="/new-register">
           <Register />
@@ -21,6 +23,19 @@ function Routes() {
         <Route exact path="/hotel/:id">
           <IndividualProperty />
         </Route>
+        <Route exact path="/holiday-home">
+          <InvestmentsHome />
+        </Route>
+        <Route exact path="/holiday-homes/:id">
+          <HolidayPage />
+        </Route>
+        <Route exact path="/holiday-homes/:id/alor">
+          <LogIn />
+        </Route>
+        <Route exact path="/real-estate-unlock">
+          <InvestmentsHome />
+        </Route>
+
         <Route>404 PAGE NOT FOUND</Route>
       </Switch>
     </div>
