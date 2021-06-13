@@ -5,6 +5,7 @@ export const Info = [
     cost: "$640.44",
     latitude: 44.5436259,
     longitude: 129.6373897,
+
     images: [
       "http://dummyimage.com/161x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/147x100.png/dddddd/000000",

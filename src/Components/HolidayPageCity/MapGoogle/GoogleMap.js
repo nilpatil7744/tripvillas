@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import {
   GoogleMap,
   withGoogleMap,
@@ -6,23 +7,40 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
-import { Info } from "../../Carasol/Carasol";
 
 function Map() {
   const [selectedPark, setSelectedPark] = useState(null);
+  const [text3, setText3] = useState([]);
+  const handleData = () => {
+    const requestParam = {
+      method: "get",
+      url: "http://localhost:8001/hotels",
+    };
+    axios(requestParam)
+      .then((response) => {
+        console.log(response.data.data, "nilo");
+        setText3(response.data.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    handleData();
+  }, []);
+
+  console.log(selectedPark, "pop");
 
   return (
     <div>
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
+        defaultCenter={{ lat: 8.111082, lng: 77.556921 }}
       >
-        {Info.map((mark) => (
+        {text3.map((mark) => (
           <Marker
-            key={mark.id}
             position={{
-              lat: mark.latitude,
-              lng: mark.longitude,
+              lat: Number(mark.latitude),
+              lng: Number(mark.longitude),
             }}
             onClick={() => {
               setSelectedPark(mark);
@@ -32,17 +50,23 @@ function Map() {
         {selectedPark && (
           <InfoWindow
             position={{
-              lat: selectedPark.latitude,
-              lng: selectedPark.longitude,
+              lat: Number(selectedPark.latitude),
+              lng: Number(selectedPark.longitude),
             }}
             onClick={() => setSelectedPark(null)}
           >
-            <div style={{ height: "150px", width: "150px" }}>
+            <div style={{ width: "170px" }}>
               <img
-                src={selectedPark.headimage}
+                src={selectedPark.hotImg1}
                 alt=""
-                style={{ height: "90px", width: "150px" }}
+                style={{ height: "100px", width: "170px" }}
               />
+              <h5>Ref id #{selectedPark._id}</h5>
+              {selectedPark.tagsArr.map((item) => (
+                <a href style={{ color: "#1e87f0" }}>
+                  {item} |
+                </a>
+              ))}
             </div>
           </InfoWindow>
         )}
@@ -65,7 +89,7 @@ function GoogleMap1() {
         }}
       >
         <MapWrapped
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyArhGxx109N8JbF0egIJ28Ag2PUs0YW_n8`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDV4NIiCAOs_91U_dXuN66AJ9Uzbjykvk4`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}

@@ -10,8 +10,8 @@ export const Footer = () => {
     setValue(val);
   };
   return (
-    <div className={style.footer_container}>
-      <h2>Holiday Homes Across The Globe</h2>
+    <div className={style.footer_container} style={{ marginTop: "90px" }}>
+      <h2 style={{ textAlign: "left" }}>Holiday Homes Across The Globe</h2>
       <Tabs value={value} onChange={handleTabs} className={style.footer_tab}>
         <Tab label="ASIA" />
         <Tab label="EUROPE" />

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import style from "./Body.module.css";
 import Data from "./data.json";
+import { Link } from "react-router-dom";
 export const InvestmentBody = () => {
   const togg = useSelector((state) => state.login.isAuth);
 
@@ -195,7 +196,13 @@ export const InvestmentBody = () => {
                   <p className={style.sub_text}>{item.title}</p>
                 </div>
                 <div className={style.image_button}>
-                  <button>Unlock</button>
+                  {togg ? (
+                    <button>Explore</button>
+                  ) : (
+                    <Link to="/unlock">
+                      <button>Unlock</button>
+                    </Link>
+                  )}
                 </div>
               </div>
               <hr style={{ opacity: 0.5 }}></hr>

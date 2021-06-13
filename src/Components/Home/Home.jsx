@@ -4,7 +4,7 @@ import { HomeSearch } from "./Home_Search/HomeSearch";
 
 import Property from "../ExpolrePage/Property";
 import { Carasol } from "../../Components/Carasol/Carasol.jsx";
-
+import { Footer } from "../../Components/Home/HomeFooter/Footer";
 export const Home = () => {
   return (
     <div>
@@ -13,7 +13,9 @@ export const Home = () => {
       <Carasol />
 
       <Property />
+
       <Carasol />
+      <Footer />
     </div>
   );
 };

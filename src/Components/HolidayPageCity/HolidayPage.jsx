@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { NavBar } from "../Home_NavBar/NavBar";
@@ -24,13 +24,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/HoliadayPage.css";
 import { Link } from "react-router-dom";
-import { Info } from "../Carasol/Carasol";
+
 import GoogleMap1 from "./MapGoogle/GoogleMap";
+import axios from "axios";
 
 function HolidayPage(props) {
   const [value, setValue] = useState([null, null]);
   const [guest, setGuest] = useState("");
-
+  const [text2, setText2] = useState([]);
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
@@ -41,11 +42,28 @@ function HolidayPage(props) {
 
   /////////// Carasol
 
+  const handleData = () => {
+    const requestParam = {
+      method: "get",
+      url: "http://localhost:8001/hotels",
+    };
+    axios(requestParam)
+      .then((response) => {
+        console.log(response.data.data);
+        setText2(response.data.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    handleData();
+  }, []);
+
   const settings = {
     infinite: true,
     speed: 1200,
     slidesToShow: 4,
-    slidesToScroll: 5,
+    slidesToScroll: 4,
     className: "slides",
   };
 
@@ -168,21 +186,38 @@ function HolidayPage(props) {
           <h2 style={{ fontWeight: "lighter" }}>Holiday Homes</h2>
         </div>
         <Slider {...settings}>
-          {Info.map((item, index) => (
+          {text2.map((item, index) => (
             <div>
               <div className="bg-image22">
-                <Link to={`${item.path}/${item.Ref_No}/alor`}>
+                <Link to={`/${item._id}/alor`}>
                   <img
-                    src={item.headimage}
+                    src={item.hotImg1}
                     style={{
                       height: "180px",
-                      width: "317.3px",
+                      width: "330.3px",
                     }}
                     alt=""
                   />
                 </Link>
-                <h5>Ref id #{item.Ref_No}</h5>
-                <h4 className="bg-text22">{item.titile}</h4>
+                <h5>Ref id #{item._id}</h5>
+                <h4 className="bg-text22" style={{ marginTop: "-30px" }}>
+                  {item.topTitle} <br />
+                  <a
+                    href
+                    style={{ color: "#484848", fontfamily: " sans-serif" }}
+                  >
+                    {item.city},{item.state},{item.country}
+                  </a>
+                </h4>
+                <div style={{ marginTop: "-30px" }}>
+                  {item.tagsArr
+                    .filter((item, index) => index < 4)
+                    .map((item) => (
+                      <a href style={{ color: "#1e87f0" }}>
+                        {item} |
+                      </a>
+                    ))}
+                </div>
               </div>
             </div>
           ))}
