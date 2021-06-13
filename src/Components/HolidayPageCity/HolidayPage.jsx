@@ -194,7 +194,7 @@ function HolidayPage(props) {
                     src={item.hotImg1}
                     style={{
                       height: "180px",
-                      width: "330.3px",
+                      width: "320.3px",
                     }}
                     alt=""
                   />

@@ -10,6 +10,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { Link } from "react-router-dom";
 
 export const HomeSearch = () => {
   const [value, setValue] = useState([null, null]);
@@ -103,7 +104,9 @@ export const HomeSearch = () => {
                 </FormControl>
               </Box>
             </div>
-            <button className={homeSearchStyles.searchBtn}>SEARCH</button>
+            <Link to="search">
+              <button className={homeSearchStyles.searchBtn}>SEARCH</button>
+            </Link>
           </div>
         </div>
       </div>

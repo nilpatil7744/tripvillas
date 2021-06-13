@@ -1,0 +1,48 @@
+/* Css for clients edit modal */
+
+.editModal {
+  height: 250px;
+  width: 40%;
+  margin: auto;
+  margin-top: 16%;
+  border: 1px solid #666666;
+  border-radius: 2px;
+  outline: none;
+  background-color: white;
+}
+
+.editModal > h2 {
+  padding: 3.5%;
+  margin-bottom: -5px;
+  margin-left: 15px;
+  color: #666666;
+}
+
+.inputBox {
+  width: 400px;
+}
+
+.inputBox > h4 {
+  margin-left: 7%;
+}
+
+.inputBox > input {
+  width: 63%;
+  padding-left: 2%;
+  margin-left: 20px;
+}
+
+.editModalButtons > button:nth-child(1) {
+  border: none;
+  color: #57c4f5;
+  margin-left: 52%;
+}
+
+.editModalButtons > button:nth-child(2) {
+  border: 1px solid #57c4f5;
+  width: 25%;
+  background: #57c4f5;
+  color: white;
+  margin-left: 6%;
+  padding: 10px;
+}
