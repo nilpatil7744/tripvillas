@@ -112,7 +112,7 @@ export const IndiPropPricing = () => {
                                 Rateplan: No meals provided (European Plan)
                             </div>
                         </div>
-                        <div style={{ padding: '15px 0px 0px 0px' }}>
+                        { noOfUnits && <div style={{ padding: '15px 0px 0px 0px' }}>
                             <div style={{display: 'flex', flexWrap: 'wrap', margin: 0, padding: 0, listStyle: 'none', marginLeft:'-40px'}}>
                                 <div style={{width: '45%', paddingLeft: '5%', margin: 0}}>
                                     <p style={{margin: '0 0 20px 0', fontWeight: 'bolder'}}>
@@ -134,7 +134,7 @@ export const IndiPropPricing = () => {
                                     </a>
                                 </div> */}
                             </div>
-                        </div>
+                        </div>}
                         <div style={{ padding: '15px 0px 0px 0px' }}>
                             {noOfUnits === null ?<button className={propertyStyles.individualPropRqsToBookBtn}>Request To Book</button>
                             : <button style={{backgroundColor:'#1e87f0'}} className={propertyStyles.individualPropRqsToBookBtn}>Request To Book</button>
