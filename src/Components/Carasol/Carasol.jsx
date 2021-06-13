@@ -4,8 +4,28 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/Carasol.css";
 import { Link } from "react-router-dom";
 import { Info } from "./Carasol";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Carasol = () => {
+  const [text, settext] = useState([]);
+
+  const handleData = () => {
+    const requestParam = {
+      method: "get",
+      url: "http://localhost:8001/hotels",
+    };
+    axios(requestParam)
+      .then((response) => {
+        console.log(response.data.data);
+        settext(response.data.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    handleData();
+  });
   const settings = {
     infinite: true,
     speed: 1200,
@@ -15,7 +35,7 @@ const Carasol = () => {
   };
 
   return (
-    <div style={{ marginTop: "150px" }}>
+    <div style={{ marginTop: "80px" }}>
       <div
         style={{
           textAlign: "left",
@@ -25,12 +45,12 @@ const Carasol = () => {
         <h2 style={{ fontWeight: "lighter" }}>Top Destinations</h2>
       </div>
       <Slider {...settings}>
-        {Info.map((item, index) => (
+        {text.map((item, index) => (
           <div>
             <div className="bg-image">
-              <Link to={`${item.path}/${item.Ref_id}`}>
+              <Link to={`/holiday-homes/${item._id}`}>
                 <img
-                  src={item.headimage}
+                  src={item.hotImg1}
                   style={{
                     height: "180px",
                     width: "300px",
@@ -39,9 +59,9 @@ const Carasol = () => {
                 />
               </Link>
 
-              <h4 className="bg-text">
-                {item.titile} <br /> <a href>{item.headtext} </a>
-              </h4>
+              <h2 className="bg-text">
+                {item.city} <br /> <a href>Vacation Rental </a>
+              </h2>
             </div>
           </div>
         ))}

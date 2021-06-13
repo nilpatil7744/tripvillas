@@ -23,7 +23,7 @@ export const Infotab = [
     text3: "Instant Book Or Request To Book",
     text4: "Both iOS & Android App Available.",
     bttn: "LIST YOUR PROPERTY",
-    path: "/",
+    path: "/new-dashboard",
   },
 ];
 

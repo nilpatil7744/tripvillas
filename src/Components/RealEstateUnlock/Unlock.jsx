@@ -3,6 +3,7 @@ import style from "./Unlock.module.css";
 import { NavBar } from "../Investments/NavBar";
 import { Footer } from "../Investments/Footer";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const Unlock = () => {
   const [formState, setFromState] = useState("");
@@ -322,8 +323,11 @@ export const Unlock = () => {
               <label>Other</label>
             </div>
           </div>
+
           <div className={style.form_button}>
-            <input type="submit" value="Submit" />
+            <Link to="/holiday-home">
+              <input type="submit" value="Submit" />
+            </Link>
           </div>
         </form>
       </div>

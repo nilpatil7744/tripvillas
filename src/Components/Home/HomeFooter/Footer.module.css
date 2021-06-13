@@ -15,6 +15,7 @@
   width: 80%;
 }
 .footer_li {
+  text-align: left;
   list-style: none;
   text-decoration: none;
   display: grid;
@@ -36,4 +37,5 @@
 .display {
   width: 16%;
   display: inline-flex;
+  text-align: left;
 }
