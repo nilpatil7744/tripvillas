@@ -51,7 +51,7 @@
   padding: 0;
 }
 .individualPropPicsWalaImage1Div {
-  height: 270px;
+  height: 310px;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -77,7 +77,7 @@
 }
 .individualPropPicsWalaImage2Div {
   margin-top: 0;
-  height: 140px;
+  height: 155px;
   box-sizing: border-box;
   padding-left: 0;
 }
@@ -324,7 +324,7 @@
 }
 .individualPropStartingPrice {
   color: black;
-  margin-top: 40px;
+  margin-top: 30px;
   font-weight: 300;
   font-size: 3.25rem;
   text-align: left;
@@ -347,46 +347,58 @@
   flex-wrap: wrap;
   display: flex;
 }
-.individualPropPricingUnitSelect{
-    -webkit-appearance: none;
-    padding-right: 20px;
-    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A);
-    background-repeat: no-repeat;
-    background-position: 100% 50%;
-    height: 40px;
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    padding: 0 10px;
-    background: #fff;
-    color: #666;
-    border: 1px solid #e5e5e5;
-    transition: .2s ease-in-out;
-    transition-property: color,background-color,border;
-    text-transform: none;
-    box-sizing: border-box;
-    margin: 0;
-    font: inherit;
+.individualPropPricingUnitSelect {
+  -webkit-appearance: none;
+  padding-right: 20px;
+  background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A);
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px;
+  background: #fff;
+  color: #666;
+  border: 1px solid #e5e5e5;
+  transition: 0.2s ease-in-out;
+  transition-property: color, background-color, border;
+  text-transform: none;
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
 }
-.individualPropRqsToBookBtn{
-    background-color: #8ec3f7;
-    color: #FFF;
-    border-color: #4ea0f3;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 40px;
-    line-height: 53px;
-    height: 53px;
-    font-size: .875rem;
-    border: 1px solid transparent;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .1s ease-in-out;
-    transition-property: color,background-color,border-color;
-    vertical-align: middle;
-    overflow: visible;
-    font: inherit;
-    margin: 0px;
-    cursor: pointer;
+.individualPropRqsToBookBtn {
+  background-color: #8ec3f7;
+  color: #fff;
+  border-color: #4ea0f3;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40px;
+  line-height: 53px;
+  height: 53px;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color, border-color;
+  vertical-align: middle;
+  overflow: visible;
+  font: inherit;
+  margin: 0px;
+  cursor: pointer;
+}
+.individualPropPricingInputSuccess {
+  margin-bottom: 0px;
+  background: #edfbf6;
+  color: #32d296;
+  position: relative;
+  padding: 15px 29px 15px 15px;
+}
+.individualPropPricingInputSuccessFlexWrap {
+  align-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
 }
