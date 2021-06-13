@@ -2,8 +2,9 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { Register } from "../Components/Register/Register";
 import {Home} from '../Components/Home/Home';
-
 import { LogIn } from "../Components/LogIn/LogIn";
+import { IndividualProperty } from "../Components/Individual_Property/IndividualProperty";
+
 function Routes() {
   return (
     <div>
@@ -16,6 +17,9 @@ function Routes() {
         </Route>
         <Route exact path="/new-login">
           <LogIn />
+        </Route>
+        <Route exact path="/hotel/:id">
+          <IndividualProperty />
         </Route>
         <Route>404 PAGE NOT FOUND</Route>
       </Switch>
