@@ -1,44 +1,26 @@
 import React from 'react';
 import propertyStyles from './IndividualProperty.module.css';
 
-export const AmenitiesBox = () => {
+export const AmenitiesBox = ({amenitiesArr}) => {
     return (
         <div className={propertyStyles.individualPropAmenitiesMain}>
             <div style={{ fontSize: '1.5rem', lineheight: 1.5, color: '#333', textAlign: 'left' }}>Key Amenities</div>
             <hr className={propertyStyles.individualPropTopBreadcrumbHRTAG} />
             <div className={propertyStyles.individualPropAmenitiesTagsContainer}>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
+                {amenitiesArr.filter((item, index) => index < 15).map((item, index) => (<div key={`amenNo${index+1}`} style={{ padding: '7px 15px 8px 0px' }}>
+                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>{item}</span>
+                </div>))}
             </div>
             <div style={{ fontWeight: 'bolder', textAlign: 'left' }}>Living Room</div>
             <div className={propertyStyles.individualPropAmenitiesTagsContainer}>
                 <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
+                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>TELEVISION WITH CABLE CONNECTION</span>
                 </div>
                 <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
+                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>SOFA</span>
                 </div>
                 <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
-                </div>
-                <div style={{ padding: '7px 15px 8px 0px' }}>
-                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>POWER BACKUP</span>
+                    <span style={{ border: '1px solid #ddddde', color: '#666' }}>DINING TABLE</span>
                 </div>
             </div>
             <div style={{ alignContent: 'space-around', flexWrap: 'wrap', display: 'flex' }}>

@@ -22,7 +22,7 @@ function Routes() {
         <Route exact path="/new-login">
           <LogIn />
         </Route>
-        <Route exact path="/hotel/:id">
+        <Route exact path="/hotels/:id">
           <IndividualProperty />
         </Route>
         <Route exact path="/holiday-home">

@@ -2,10 +2,12 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { LoginReducer } from "./LoginAuth/reducer";
 import { registerReducer } from "./Register/reducer";
+import { hotelsReducer } from "./SingleHotel/reducer";
 
 const rootreducer = combineReducers({
   register: registerReducer,
   login: LoginReducer,
+  singleHotels: hotelsReducer
 });
 
 export const store = createStore(
