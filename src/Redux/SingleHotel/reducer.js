@@ -2,8 +2,8 @@ import { GET_HOTEL_FAILURE, GET_HOTEL_REQUEST, GET_HOTEL_SUCCESS } from "./actio
 
 const initState = {
     data : [],
-    isLoading: false,
-    isError: false,
+    isLoading: true,
+    isError: true,
 }
 
 export const hotelsReducer = (state = initState, {type, payload}) => {
@@ -12,7 +12,7 @@ export const hotelsReducer = (state = initState, {type, payload}) => {
             return {
                 ...state,
                 isLoading: true,
-                isError: false,
+                // isError: false,
             };
         case GET_HOTEL_SUCCESS:
             return {
