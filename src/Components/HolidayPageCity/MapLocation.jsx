@@ -17,9 +17,12 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { useDispatch, useSelector } from "react-redux";
+import Loadingg from "../Loading/Loadingg";
+import { searchdataquery } from "../../Redux/SearchDataHome/action";
 
 function MapLocation(props) {
-  const [Info, setInfo] = useState([]);
+  const [Info2, setInfo] = useState([]);
 
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [guest, setGuest] = useState("");
@@ -27,40 +30,61 @@ function MapLocation(props) {
 
   const [value, setValue] = useState([null, null]);
   const [ModalIsopen2, setModalIsopen2] = useState(false);
-
+  const [isLoading, setLoadng] = useState(false);
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
+  const dispatch = useDispatch();
+  const searchq = useSelector((state) => state.search.todos);
+
+  console.log(searchq, "store nil");
 
   const handleChange = () => {
+    setLoadng(true);
+    setEditModalIsOpen(false);
     console.log(query);
+
+    const addTodoAction2 = searchdataquery(query);
+    dispatch(addTodoAction2);
     axios
       .get(`http://localhost:8001/hotels?city=${query}`)
       .then((res) => {
         console.log(res.data);
+        setInfo(res.data.data);
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setLoadng(false);
       });
+  };
+  const Nil = {
+    data: query,
   };
 
   useEffect(() => {
+    handleChange();
     handleFruits();
   }, []);
 
   const handleFruits = () => {
+    setLoadng(true);
     const requestParam = {
       method: "get",
-      url: "http://localhost:8001/hotels",
+      url: `http://localhost:8001/hotels?city=${searchq}`,
     };
     axios(requestParam)
       .then((response) => {
         console.log(response.data.data);
         setInfo(response.data.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoadng(false);
+      });
   };
-
+  if (isLoading) return <Loadingg />;
   return (
     <div>
       <NavBar />
@@ -207,57 +231,58 @@ function MapLocation(props) {
       <Modal
         isOpen={ModalIsopen2}
         onRequestClose={() => setModalIsopen2(false)}
+        className={styles.editModal2}
       >
         <div style={{ display: "flex" }}>
           <div style={{ marginLeft: "90px" }}>
             <h2>Features</h2>
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Swimming Pool
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Air Conditioner
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               {" "}
               Internet
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Television
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Parking</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Parking</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Housekeeping
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Functional Kitchen
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Washing Machine
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Spa</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Spa</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Gym</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Gym</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Cook On Call
             </label>
           </div>
@@ -265,98 +290,98 @@ function MapLocation(props) {
                              Second list */}
           <div style={{ marginLeft: "190px" }}>
             <h2>Property Type</h2>
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Luxury Yacht
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Camping Ground
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Apartment
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Villa</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Villa</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Hostel</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Hostel</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Serviced Apartment
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Bed and Breakfast
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Boutique Hotel
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Bungalow</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Bungalow</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Caravan</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Caravan</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Guesthouse
             </label>
           </div>
 
           <div style={{ marginLeft: "190px" }}>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Villa</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Villa</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Hostel</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Hostel</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Serviced Apartment
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Bed and Breakfast
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Boutique Hotel
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Bungalow</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Bungalow</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>Caravan</label>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>Caravan</label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "black" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "black" }}>
               Guesthouse
             </label>
             <br />
             <br />
             <hr />
             <h2>Price</h2>
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "red" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "red" }}>
               High To Low
             </label>
             <br /> <br />
-            <input type="checkbox" />
-            <label style={{ fontSize: "20px", color: "red" }}>
+            <input type="checkbox" style={{ height: "16px", width: "16px" }} />
+            <label style={{ fontSize: "15px", color: "red" }}>
               Low To High
             </label>
           </div>
@@ -388,7 +413,7 @@ function MapLocation(props) {
         }}
       >
         <div style={{ overflow: "auto" }}>
-          {Info.map((item) => (
+          {Info2?.map((item) => (
             <div style={{ overflow: "auto" }}>
               <div
                 style={{
@@ -445,7 +470,13 @@ function MapLocation(props) {
           ))}
         </div>
         <div style={{ top: "0", position: "sticky" }}>
-          <GoogleMap2 />
+          {Info2.length > 0 ? (
+            <GoogleMap2 location={Nil} />
+          ) : (
+            <h2 style={{ marginLeft: "500px", marginTop: "200px" }}>
+              ERROR Please Select Your Location Again ⚠️
+            </h2>
+          )}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import { Register } from "../Components/Register/Register";
-import {Home} from '../Components/Home/Home';
+import { Home } from "../Components/Home/Home";
 import { LogIn } from "../Components/LogIn/LogIn";
 import { IndividualProperty } from "../Components/Individual_Property/IndividualProperty";
 import { InvestmentsHome } from "../Components/Investments/InvestmentsHome";
@@ -22,9 +22,7 @@ function Routes() {
         <Route exact path="/new-login">
           <LogIn />
         </Route>
-        <Route exact path="/hotel/:id">
-          <IndividualProperty />
-        </Route>
+
         <Route exact path="/holiday-home">
           <InvestmentsHome />
         </Route>
@@ -32,7 +30,7 @@ function Routes() {
           <HolidayPage />
         </Route>
         <Route exact path="/:id/alor">
-          <LogIn />
+          <IndividualProperty />
         </Route>
         <Route exact path="/real-estate-unlock">
           <InvestmentsHome />
@@ -43,11 +41,9 @@ function Routes() {
         <Route exact path="/search">
           <MapLocation />
         </Route>
-
         <Route exact path="/new-dashboard">
           <SidebarPrivate />
         </Route>
-
         <Route>404 PAGE NOT FOUND</Route>
       </Switch>
     </div>

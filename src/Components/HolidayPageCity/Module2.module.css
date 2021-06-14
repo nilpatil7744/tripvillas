@@ -11,6 +11,17 @@
   background-color: white;
 }
 
+.editModal2 {
+  width: 74%;
+  height: 500px;
+  margin: auto;
+  margin-top: 5%;
+  outline: none;
+  background-color: white;
+  overflow: auto;
+  border: 1px solid #666666;
+}
+
 .editModal > h2 {
   padding: 3.5%;
   margin-bottom: -5px;

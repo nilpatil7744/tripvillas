@@ -1,0 +1,3 @@
+export const SEARCH_DATA = "SEARCH_DATA";
+
+export const SEARCH_DATA_QUERY = "SEARCH_DATA_QUERY";

@@ -4,6 +4,7 @@ import RegInfo from "../Register/RegInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { loginruser } from "../../Redux/LoginAuth/action";
 import { Link, Redirect } from "react-router-dom";
+import Loadingg from "../Loading/Loadingg";
 const LogIn = () => {
   const obj2 = {
     loginemail: "",
@@ -26,6 +27,7 @@ const LogIn = () => {
     });
   };
   const togg = useSelector((state) => state.login.isAuth);
+  const isLoading = useSelector((state) => state.login.isloading);
   const handleRegister = () => {
     if (query.loginemail !== "" && query.loginpassword !== "") {
       let payload = {
@@ -45,6 +47,8 @@ const LogIn = () => {
       }
     }
   };
+
+  if (isLoading) return <Loadingg />;
   return (
     <div>
       <div>

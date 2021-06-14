@@ -50,7 +50,7 @@ const SidebarPrivate = () => {
                     <Link to={item.path}>
                       {item.icon}
 
-                      <span>{item.title}</span>
+                      <span className="span234">{item.title}</span>
                     </Link>
                   </li>
                 </div>

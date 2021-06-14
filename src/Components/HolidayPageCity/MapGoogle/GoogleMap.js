@@ -7,11 +7,14 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+import Loadingg from "../../Loading/Loadingg";
 
 function Map() {
   const [selectedPark, setSelectedPark] = useState(null);
   const [text3, setText3] = useState([]);
+  const [isLoading, setLoadng] = useState(false);
   const handleData = () => {
+    setLoadng(true);
     const requestParam = {
       method: "get",
       url: "http://localhost:8001/hotels",
@@ -21,7 +24,10 @@ function Map() {
         console.log(response.data.data, "nilo");
         setText3(response.data.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoadng(false);
+      });
   };
 
   useEffect(() => {
@@ -29,7 +35,7 @@ function Map() {
   }, []);
 
   console.log(selectedPark, "pop");
-
+  if (isLoading) return <Loadingg />;
   return (
     <div>
       <GoogleMap

@@ -2,8 +2,10 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { LoginReducer } from "./LoginAuth/reducer";
 import { registerReducer } from "./Register/reducer";
+import { searchreducer } from "./SearchDataHome/reducer";
 
 const rootreducer = combineReducers({
+  search: searchreducer,
   register: registerReducer,
   login: LoginReducer,
 });
