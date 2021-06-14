@@ -25,7 +25,7 @@ export const IndividualProperty = () => {
         dispatch(getHotel(id));
         console.log(id);
         console.log(data);
-    }, [dispatch, id])
+    }, [dispatch])
 
     return (
         <div>

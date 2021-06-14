@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../../Styles/Register.css";
 import RegInfo from "../Register/RegInfo";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginruser } from "../../Redux/LoginAuth/action";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 const LogIn = () => {
   const obj2 = {
     loginemail: "",
@@ -25,7 +25,7 @@ const LogIn = () => {
       [name]: val,
     });
   };
-
+  const togg = useSelector((state) => state.login.isAuth);
   const handleRegister = () => {
     if (query.loginemail !== "" && query.loginpassword !== "") {
       let payload = {

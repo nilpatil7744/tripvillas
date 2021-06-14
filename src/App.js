@@ -1,5 +1,6 @@
 import "./App.css";
-// import { IndividualProperty } from "./Components/Individual_Property/IndividualProperty";
+import MapLocation from "./Components/HolidayPageCity/MapLocation";
+
 import { Routes } from "./Routes/Routes";
 
 function App() {
@@ -7,6 +8,8 @@ function App() {
     <div className="App">
       {/* <IndividualProperty/> */}
       <Routes />
+
+      {/* <MapLocation /> */}
     </div>
   );
 }
