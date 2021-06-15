@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../../Styles/Register.css";
 import RegInfo from "./RegInfo";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { registeruser } from "../../Redux/Register/action";
 import { Link } from "react-router-dom";
+import Loadingg from "../Loading/Loadingg";
 const Register = () => {
   const obj1 = {
     name2: "",
@@ -29,7 +30,7 @@ const Register = () => {
     confirmpassword,
     terms,
   } = query;
-
+  const isLoading = useSelector((state) => state.register.isloading);
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -86,6 +87,8 @@ const Register = () => {
       }
     }
   };
+
+  if (isLoading) return <Loadingg />;
   return (
     <div>
       <div>

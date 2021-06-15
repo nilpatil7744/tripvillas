@@ -16,7 +16,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-
+import Loadingg from "../Loading/Loadingg";
 ////////////////////
 
 import Slider from "react-slick";
@@ -32,6 +32,8 @@ function HolidayPage(props) {
   const [value, setValue] = useState([null, null]);
   const [guest, setGuest] = useState("");
   const [text2, setText2] = useState([]);
+  const [isLoading, setLoadng] = useState(false);
+  const [isError, setError] = useState(false);
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
@@ -43,6 +45,7 @@ function HolidayPage(props) {
   /////////// Carasol
 
   const handleData = () => {
+    setLoadng(true);
     const requestParam = {
       method: "get",
       url: "http://localhost:8001/hotels",
@@ -51,8 +54,12 @@ function HolidayPage(props) {
       .then((response) => {
         console.log(response.data.data);
         setText2(response.data.data);
+        setError(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoadng(false);
+      });
   };
 
   useEffect(() => {
@@ -66,6 +73,8 @@ function HolidayPage(props) {
     slidesToScroll: 4,
     className: "slides",
   };
+
+  if (isLoading) return <Loadingg />;
 
   ////////////////
   return (
@@ -194,7 +203,7 @@ function HolidayPage(props) {
                     src={item.hotImg1}
                     style={{
                       height: "180px",
-                      width: "330.3px",
+                      width: "320.3px",
                     }}
                     alt=""
                   />
@@ -211,7 +220,7 @@ function HolidayPage(props) {
                 </h4>
                 <div style={{ marginTop: "-30px" }}>
                   {item.tagsArr
-                    .filter((item, index) => index < 4)
+                    .filter((item, index) => index < 2)
                     .map((item) => (
                       <a href style={{ color: "#1e87f0" }}>
                         {item} |

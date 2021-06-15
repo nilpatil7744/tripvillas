@@ -10,15 +10,27 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { searchdata } from "../../../Redux/SearchDataHome/action";
+import Loadingg from "../../Loading/Loadingg";
 export const HomeSearch = () => {
   const [value, setValue] = useState([null, null]);
   const [guest, setGuest] = useState("");
-
+  const [query2, setQuery2] = useState("");
+  const [isLoading, setLoadng] = useState(false);
+  const dispatch = useDispatch();
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
 
+  const handleChange = () => {
+    console.log(query2, guest, value);
+
+    const addTodoAction = searchdata(query2);
+    dispatch(addTodoAction);
+  };
+  if (isLoading) return <Loadingg />;
   return (
     <>
       <div className={homeSearchStyles.mainDiv}>
@@ -42,6 +54,7 @@ export const HomeSearch = () => {
                 name="location"
                 id="location"
                 placeholder="Location"
+                onChange={(e) => setQuery2(e.target.value)}
               />
             </div>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -103,7 +116,14 @@ export const HomeSearch = () => {
                 </FormControl>
               </Box>
             </div>
-            <button className={homeSearchStyles.searchBtn}>SEARCH</button>
+            <Link to="search">
+              <button
+                className={homeSearchStyles.searchBtn}
+                onClick={handleChange}
+              >
+                SEARCH
+              </button>
+            </Link>
           </div>
         </div>
       </div>

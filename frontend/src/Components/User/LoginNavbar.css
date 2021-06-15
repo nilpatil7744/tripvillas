@@ -29,7 +29,7 @@
   transition: 350ms;
 }
 
-.nav-text {
+.nav-text22 {
   justify-content: start;
   align-items: center;
   list-style: none;
@@ -42,17 +42,23 @@
   margin-top: 10px;
 }
 
-.nav-text:hover {
+.nav-text22:hover {
   background-color: gray;
   transition: 2s;
   color: red;
 }
 
-.nav-text a {
+.nav-text22 a {
   text-decoration: none;
   color: #333333;
 }
 
+<<<<<<< HEAD:src/Components/User/LoginNavbar.css
+.span234 {
+  margin-left: 16px;
+}
+=======
+>>>>>>> b6046164ca7d3f45448663e799e872fa03e580ac:frontend/src/Components/User/LoginNavbar.css
 .menu-bars22 {
   margin-left: 2 rem;
   font-size: 2 rem;
@@ -67,7 +73,7 @@
   border: 0.1 px solid gray;
 }
 
-.nav-text22 ui {
+.nav-text2222 ui {
   text-decoration: none;
   color: #333333;
 }
@@ -76,7 +82,7 @@
   transition: 350ms;
 }
 
-.nav-text1 {
+.nav-text221 {
   padding: 15px;
   text-decoration: none;
 

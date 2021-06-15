@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import {
   GoogleMap,
   withGoogleMap,
@@ -6,23 +7,64 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
-import { Info } from "../../Carasol/Carasol";
+import { useSelector } from "react-redux";
 
-function Map2() {
+import Loadingg from "../../Loading/Loadingg";
+
+function Map2({ location }) {
   const [selectedPark, setSelectedPark] = useState(null);
+  const [Info2, setInfo] = useState([]);
+  const [isLoading, setLoadng] = useState(false);
+  const searchq = useSelector((state) => state.search.todos);
+  const searchq2 = useSelector((state) => state.search.todos2);
 
+  const handleChange = () => {
+    axios
+      .get(`http://localhost:8001/hotels?city=${searchq}`)
+      .then((res) => {
+        console.log(res.data);
+        setInfo(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  console.log(Info2, "phone");
+  useEffect(() => {
+    handleChange();
+    handleFruits();
+  }, []);
+
+  const handleFruits = () => {
+    setLoadng(true);
+    const requestParam = {
+      method: "get",
+      url: `http://localhost:8001/hotels?city=${searchq2}`,
+    };
+    axios(requestParam)
+      .then((response) => {
+        console.log(response.data.data);
+        setInfo(response.data.data);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoadng(false);
+      });
+  };
+
+  console.log(Info2.latitude, "mim");
+
+  if (isLoading) return <Loadingg />;
   return (
     <div>
-      <GoogleMap
-        defaultZoom={10}
-        defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
-      >
-        {Info.map((mark) => (
+      <GoogleMap defaultZoom={5} defaultCenter={{ lat: 20.5937, lng: 78.9629 }}>
+        {Info2.map((mark) => (
           <Marker
             key={mark.id}
             position={{
-              lat: mark.latitude,
-              lng: mark.longitude,
+              lat: Number(mark.latitude),
+              lng: Number(mark.longitude),
             }}
             onClick={() => {
               setSelectedPark(mark);
@@ -32,8 +74,8 @@ function Map2() {
         {selectedPark && (
           <InfoWindow
             position={{
-              lat: selectedPark.latitude,
-              lng: selectedPark.longitude,
+              lat: Number(selectedPark.latitude),
+              lng: Number(selectedPark.longitude),
             }}
             onClick={() => setSelectedPark(null)}
           >
