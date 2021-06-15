@@ -12,11 +12,16 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import DoneIcon from '@material-ui/icons/Done';
+import { useSelector } from 'react-redux';
 
 export const IndiPropPricing = ({ basePrice }) => {
+    const checkinDate = useSelector(state => state.pricing.checkinDate);
+    const checkOutDate = useSelector(state => state.pricing.checkOutDate);
+    const noOfGuest = useSelector(state => state.pricing.noOfGuest);
+
     const [noOfUnits, setNoOfUnits] = useState(null);
-    const [value, setValue] = useState([null, null]);
-    const [guest, setGuest] = useState('');
+    const [value, setValue] = useState([checkinDate || null, checkOutDate || null]);
+    const [guest, setGuest] = useState(noOfGuest || '');
 
     const handleUnits = (e) => {
         if (e.target.value === 'Select units') {
