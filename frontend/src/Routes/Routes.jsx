@@ -23,6 +23,9 @@ function Routes() {
           <LogIn />
         </Route>
 
+        {/* <Route exact path="/hotels/:id">
+          <IndividualProperty />
+        </Route> */}
         <Route exact path="/holiday-home">
           <InvestmentsHome />
         </Route>

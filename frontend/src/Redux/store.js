@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import { LoginReducer } from "./LoginAuth/reducer";
 import { registerReducer } from "./Register/reducer";
 import { searchreducer } from "./SearchDataHome/reducer";
+import { hotelsReducer } from "./SingleHotel/reducer";
 
 const rootreducer = combineReducers({
   search: searchreducer,
   register: registerReducer,
   login: LoginReducer,
+  singleHotels: hotelsReducer,
 });
 
 export const store = createStore(
