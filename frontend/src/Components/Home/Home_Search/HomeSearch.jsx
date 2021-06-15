@@ -14,21 +14,37 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { searchdata } from "../../../Redux/SearchDataHome/action";
 import Loadingg from "../../Loading/Loadingg";
+import { setPriceVariables } from "../../../Redux/Pricing_Final/action";
 export const HomeSearch = () => {
   const [value, setValue] = useState([null, null]);
   const [guest, setGuest] = useState("");
   const [query2, setQuery2] = useState("");
   const [isLoading, setLoadng] = useState(false);
   const dispatch = useDispatch();
+
+  const payload = {
+    location: query2,
+    checkinDate : value[0],
+    checkOutDate : value[1],
+    noOfGuest : guest,
+  }
+
   const handleGuest = (event) => {
     setGuest(event.target.value);
+    // const pricingAction = setPriceVariables(payload)
+    // dispatch(pricingAction);
+
   };
+
 
   const handleChange = () => {
     console.log(query2, guest, value);
+    console.log(payload);
 
-    const addTodoAction = searchdata(query2);
-    dispatch(addTodoAction);
+    // const addTodoAction = searchdata(query2);
+    // dispatch(addTodoAction);
+    const pricingAction = setPriceVariables(payload)
+    dispatch(pricingAction);
   };
   if (isLoading) return <Loadingg />;
   return (

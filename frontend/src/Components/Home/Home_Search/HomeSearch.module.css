@@ -33,6 +33,11 @@
     border: 1px solid black;
     display: flex;
 }
+.searchWidget > a{
+    margin: 0% !important;
+    padding: 0% !important;
+    box-sizing: border-box;
+}
 .inp_location{
     display: flex;
     vertical-align: middle;
@@ -76,7 +81,6 @@
 }
 .searchBtn{
     cursor: pointer;
-    width: calc(100% * 1 / 6.001);
     box-sizing: border-box;
     background-color: #1e87f0;
     color: #fff;
