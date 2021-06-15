@@ -1,11 +1,4 @@
-body {
-  color: #737373;
-  font-family: "Roboto", arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  font-weight: 400;
-}
-h1 {
+.container h1 {
   font-family: "Roboto", arial, helvetica, sans-serif;
   margin-top: 0;
   font-weight: 300;
@@ -16,6 +9,11 @@ h1 {
   width: 80%;
   margin: auto;
   text-align: center;
+  color: #737373;
+  font-family: "Roboto", arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  font-weight: 400;
 }
 .h1s {
   font-weight: 600;
