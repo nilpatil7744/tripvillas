@@ -61,7 +61,7 @@ export const IndiPropPricing = ({ basePrice }) => {
                             </div>}
                         <div style={{ padding: '15px 0px 0px 0px' }}>
                             <select onChange={handleUnits} className={propertyStyles.individualPropPricingUnitSelect}>
-                                <option selected value={null} >Select units</option>
+                                <option defaultValue >Select units</option>
                                 <option value={1}>1 units</option>
                                 <option value={2}>2 units</option>
                             </select>
