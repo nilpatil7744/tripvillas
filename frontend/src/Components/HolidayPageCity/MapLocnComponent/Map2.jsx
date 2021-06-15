@@ -81,10 +81,16 @@ function Map2({ location }) {
           >
             <div style={{ height: "160px", width: "150px" }}>
               <img
-                src={selectedPark.headimage}
+                src={selectedPark.hotImg1}
                 alt=""
                 style={{ height: "90px", width: "150px" }}
               />
+              <h5>Ref id #{selectedPark._id}</h5>
+              {selectedPark.tagsArr.map((item) => (
+                <a href style={{ color: "#1e87f0" }}>
+                  {item} |
+                </a>
+              ))}
             </div>
           </InfoWindow>
         )}

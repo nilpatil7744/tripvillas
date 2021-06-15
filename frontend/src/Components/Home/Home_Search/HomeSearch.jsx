@@ -136,6 +136,7 @@ export const HomeSearch = () => {
               <button
                 className={homeSearchStyles.searchBtn}
                 onClick={handleChange}
+                style={{ width: "150px" }}
               >
                 SEARCH
               </button>

@@ -15,7 +15,7 @@ import { FaBuilding } from "react-icons/fa";
 export const SidebarData = [
   {
     title: "My Properties",
-    path: "/",
+    path: "/start",
     icon: <AiOutlineUnorderedList />,
     cName: "nav-text22",
   },
@@ -45,19 +45,19 @@ export const SidebarData = [
   },
   {
     title: "Reviews",
-    path: "/support",
+    path: "/support2",
     icon: <BsStar />,
     cName: "nav-text22",
   },
   {
     title: "My Customer",
-    path: "/support",
+    path: "/support3",
     icon: <GrGroup />,
     cName: "nav-text22",
   },
   {
     title: "My Profile",
-    path: "/support",
+    path: "/support4",
     icon: <GrGroup />,
     cName: "nav-text22",
   },

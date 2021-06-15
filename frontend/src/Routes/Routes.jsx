@@ -47,6 +47,7 @@ function Routes() {
         <Route exact path="/new-dashboard">
           <SidebarPrivate />
         </Route>
+        <Route exact path="/start"></Route>
         <Route>404 PAGE NOT FOUND</Route>
       </Switch>
     </div>
