@@ -13,12 +13,33 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const NavBar = () => {
   const [state, setState] = React.useState({ right: false });
   const [isSigned, setIsSigned] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  // >>>>>>>>>>>>>>>>>>>>>>>>
+
+  const togg = useSelector((state) => state.login.email);
+
+  const { isAuth, username } = useSelector((state) => state.login);
+
+  console.log(username, togg, isAuth, "nil");
+
+  const togg2 = () => {
+    var nil = "";
+    for (var i = 0; i < togg.length - 10; i++) {
+      console.log(togg[i]);
+      nil += togg[i];
+    }
+    return nil;
+  };
+
+  // >>>>>>>>>>>>>>>
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -139,9 +160,10 @@ export const NavBar = () => {
               onClick={handleClick}
               color="inherit"
             >
-              {isSigned ? (
+              {isAuth ? (
                 <div>
-                  (NILESH <ArrowDropDownIcon />{" "}
+                  <a>{togg2()}</a>
+                  <ArrowDropDownIcon />{" "}
                 </div>
               ) : (
                 <PersonOutlineIcon />

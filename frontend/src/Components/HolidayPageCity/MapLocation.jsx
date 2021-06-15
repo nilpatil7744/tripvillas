@@ -20,7 +20,7 @@ import Select from "@material-ui/core/Select";
 import { useDispatch, useSelector } from "react-redux";
 import Loadingg from "../Loading/Loadingg";
 import { searchdataquery } from "../../Redux/SearchDataHome/action";
-
+import { PointSpreadLoading } from "react-loadingg";
 function MapLocation(props) {
   const [Info2, setInfo] = useState([]);
 
@@ -31,6 +31,7 @@ function MapLocation(props) {
   const [value, setValue] = useState([null, null]);
   const [ModalIsopen2, setModalIsopen2] = useState(false);
   const [isLoading, setLoadng] = useState(false);
+  const [iserror, seterror] = useState(false);
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
@@ -79,13 +80,13 @@ function MapLocation(props) {
         console.log(response.data.data);
         setInfo(response.data.data);
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err), seterror(true))
       .finally(() => {
         setLoadng(false);
       });
   };
-  if (isLoading) return <Loadingg />;
-  return (
+
+  return !isLoading ? (
     <div>
       <NavBar />
       <div
@@ -473,13 +474,17 @@ function MapLocation(props) {
           {Info2.length > 0 ? (
             <GoogleMap2 location={Nil} />
           ) : (
-            <h2 style={{ marginLeft: "500px", marginTop: "200px" }}>
-              ERROR Please Select Your Location Again ⚠️
-            </h2>
+            <div>
+              <h2 style={{ marginTop: "600px", marginLeft: "1600px" }}>
+                <PointSpreadLoading />
+              </h2>
+            </div>
           )}
         </div>
       </div>
     </div>
+  ) : (
+    <Loadingg />
   );
 }
 

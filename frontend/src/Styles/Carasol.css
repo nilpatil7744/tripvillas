@@ -78,8 +78,7 @@
   /* Add the blur effect */
   filter: blur(1px);
   -webkit-filter: blur(0.2px);
-
-  filter: grayscale(60%);
+  filter: brightness(60%);
   /* Full height */
   height: 100%;
   background-position: center;
@@ -89,7 +88,7 @@
 }
 
 .bg-text {
-  color: white;
+  color: whitesmoke;
   font-weight: bold;
   position: absolute;
   top: 40%;
