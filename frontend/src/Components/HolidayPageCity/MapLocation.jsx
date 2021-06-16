@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import SearchIcon from "@material-ui/icons/Search";
+import { AiOutlineSearch } from "react-icons/ai";
 import { BsFilterLeft } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
 import { NavBar } from "../Home_NavBar/NavBar";
@@ -51,33 +51,40 @@ export default function MapLocation(props) {
   console.log(searchq, "store nil");
 
   const handleChange = () => {
-    setLoadng(true);
-    setisError(false);
-    saveData("locn", query);
-    setEditModalIsOpen(false);
-    console.log(query);
+    if (query === "") {
+      alert("Please select a location");
+    } else {
+      setLoadng(true);
+      setisError(false);
+      saveData("locn", query);
+      setEditModalIsOpen(false);
+      console.log(query);
 
-    const addTodoAction2 = searchdataquery(query);
-    dispatch(addTodoAction2);
-    axios
-      .get(`http://localhost:8001/hotels?city=${query}`)
-      .then((res) => {
-        console.log(res.data);
-        setInfo(res.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setisError(true);
-      })
-      .finally(() => {
-        setLoadng(false);
-      });
+      const addTodoAction2 = searchdataquery(query);
+      dispatch(addTodoAction2);
+      axios
+        .get(`http://localhost:8001/hotels?city=${query}`)
+        .then((res) => {
+          console.log(res.data);
+          setInfo(res.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          setisError(true);
+        })
+        .finally(() => {
+          setLoadng(false);
+        });
+    }
   };
   const Nil = {
     data: query,
   };
 
   const handleFruits = () => {
+    if (query.location === "") {
+      alert("Please select a location");
+    }
     setLoadng(true);
     setisError(false);
     axios
@@ -141,23 +148,29 @@ export default function MapLocation(props) {
             onRequestClose={() => setEditModalIsOpen(false)}
             className={styles.editModal}
           >
-            <h1 style={{ color: "black", marginTop: "10px" }}>Modify Search</h1>
-            <hr />
+            <h1
+              style={{ color: "black", marginTop: "40px", marginLeft: "30px" }}
+            >
+              Modify Search
+            </h1>
 
             <div>
               <div className={homeSearchStyles.inp_location}>
-                <span className={homeSearchStyles.searchIcon}>
-                  <SearchIcon />
-                </span>
                 <input
                   type="text"
                   name="location"
                   placeholder="Location"
                   onChange={(e) => setQuery(e.target.value)}
+                  style={{ width: "540px", marginLeft: "30px" }}
                 />
               </div>
-              <br />
-              <div style={{ display: "flex" }}>
+
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: "12px",
+                }}
+              >
                 <br />
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                   <DateRangePicker
@@ -173,60 +186,88 @@ export default function MapLocation(props) {
                           {...startProps}
                           helperText=""
                           className={homeSearchStyles.chckk}
+                          style={{ width: "270px", marginLeft: "30px" }}
                           size="small"
                         />
                         <TextField
                           {...endProps}
                           helperText=""
                           className={homeSearchStyles.chckk}
+                          style={{ width: "270px" }}
                           size="small"
                         />
                       </React.Fragment>
                     )}
                   />
                 </LocalizationProvider>
-                <br />
-                <div>
-                  <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth>
-                      <InputLabel
-                        size="small"
-                        id="guest-select-label"
-                        className={homeSearchStyles.guestInput}
-                      >
-                        Select Guests
-                      </InputLabel>
-                      <Select
-                        labelId="guest-select-label"
-                        id="guest-select"
-                        autoWidth={true}
-                        size="small"
-                        sx={{ minWidth: "160px" }}
-                        value={guest}
-                        label="Select Guests"
-                        onChange={handleGuest}
-                      >
-                        {new Array(50).fill(0).map((item, index) => {
-                          return (
-                            <MenuItem key={`${index}gsts`} value={index + 1}>
-                              {index === 0
-                                ? `${index + 1} guest`
-                                : `${index + 1} guests`}
-                            </MenuItem>
-                          );
-                        })}
-                      </Select>
-                    </FormControl>
-                  </Box>
-                </div>
+                <br /> <br />
+              </div>
+
+              <div style={{ marginTop: "6px" }}>
+                <Box sx={{ minWidth: 120 }}>
+                  <br /> <br />
+                  <FormControl fullWidth>
+                    <InputLabel
+                      size="small"
+                      id="guest-select-label"
+                      className={homeSearchStyles.guestInput}
+                      style={{ marginTop: "-40px", marginLeft: "30px" }}
+                    >
+                      Select Guests
+                    </InputLabel>
+                    <Select
+                      labelId="guest-select-label"
+                      id="guest-select"
+                      autoWidth={true}
+                      size="small"
+                      sx={{ minWidth: "160px", marginLeft: "30px" }}
+                      value={guest}
+                      label="Select Guests"
+                      onChange={handleGuest}
+                      style={{
+                        width: "540px",
+                        marginTop: "-40px",
+                      }}
+                    >
+                      {new Array(50).fill(0).map((item, index) => {
+                        return (
+                          <MenuItem
+                            key={`${index}gsts`}
+                            value={index + 1}
+                            style={{ width: "540px" }}
+                          >
+                            {index === 0
+                              ? `${index + 1} guest`
+                              : `${index + 1} guests`}
+                          </MenuItem>
+                        );
+                      })}
+                    </Select>
+                  </FormControl>
+                </Box>
               </div>
             </div>
-            <div className={styles.editModalButtons}>
+            <div
+              className={styles.editModalButtons}
+              style={{ marginTop: "-20px" }}
+            >
               <br />
-              <button onClick={handleChange}>Search</button>
+              <button
+                onClick={handleChange}
+                style={{ backgroundColor: "#0F7AE5" }}
+              >
+                Search
+              </button>
               <button
                 onClick={() => setEditModalIsOpen(false)}
-                style={{ padding: "9px", width: "25%", marginLeft: "15px" }}
+                style={{
+                  padding: "9px",
+                  width: "25%",
+                  marginLeft: "3px",
+                  backgroundColor: "#FFFFFF",
+                  color: "#333333",
+                  border: "1px solid gray",
+                }}
               >
                 Cancel
               </button>
