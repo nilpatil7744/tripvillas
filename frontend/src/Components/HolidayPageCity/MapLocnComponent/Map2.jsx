@@ -19,7 +19,6 @@ function Map2() {
     setLoadng(true);
     axios.get(`http://localhost:8001/hotels?city=${location || loadData('locn')}`)
       .then((response) => {
-        console.log(response.data.data);
         setInfo(response.data.data);
       })
       .catch((err) => console.log(err))
@@ -27,8 +26,6 @@ function Map2() {
         setLoadng(false);
       });
   };
-
-  console.log(Info2.latitude, "mim");
 
   if (isLoading) return <Loadingg />;
   return (

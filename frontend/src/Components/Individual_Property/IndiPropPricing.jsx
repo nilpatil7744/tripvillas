@@ -13,6 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import DoneIcon from '@material-ui/icons/Done';
 import { useSelector } from 'react-redux';
+import { loadData, saveData } from '../../utils/localStorage';
+import { useEffect } from 'react';
 
 export const IndiPropPricing = ({ basePrice }) => {
     const checkinDate = useSelector(state => state.pricing.checkinDate);
@@ -21,7 +23,26 @@ export const IndiPropPricing = ({ basePrice }) => {
 
     const [noOfUnits, setNoOfUnits] = useState(null);
     const [value, setValue] = useState([checkinDate || null, checkOutDate || null]);
-    const [guest, setGuest] = useState(noOfGuest || '');
+    const [guest, setGuest] = useState(noOfGuest || 0);
+    const [price, setPrice] = useState(Number(basePrice));
+
+    const stDate = value[0] ? value[0].getDate() : Number(loadData('stDate'));
+    const endDate = value[1] ? value[1].getDate() : Number(loadData('stDate'));
+    const stMonth = value[0] ? (value[0].getMonth() + 1) : Number(loadData('stDate'));
+    const endMonth = value[1] ? (value[1].getMonth() + 1) : Number(loadData('stDate'));
+    const guestNum = guest ? Number(guest) : Number(loadData('guest'));
+    if (stDate) {
+        saveData('stDate', stDate);
+    }
+    if (endDate) {
+        saveData('endDate', endDate);
+    }
+    if (stMonth) {
+        saveData('stMonth', stMonth);
+    }
+    if (endMonth) {
+        saveData('endMonth', endMonth);
+    }
 
     const handleUnits = (e) => {
         if (e.target.value === 'Select units') {
@@ -34,6 +55,11 @@ export const IndiPropPricing = ({ basePrice }) => {
     const handleGuest = (event) => {
         setGuest(event.target.value);
     };
+
+    useEffect(() => {
+        const updatedPrice = Math.floor(Number(basePrice) + ((endMonth - stMonth) * 30 * (basePrice / 2)) + ((endDate - stDate) * (basePrice / 2)) + ((guestNum - 1) * (basePrice / 3)));
+        setPrice(updatedPrice * noOfUnits)
+    }, [guestNum, endMonth, stMonth, stDate, endDate, basePrice, noOfUnits])
 
     return (
         <div className={propertyStyles.individualPropPricingMain}>
@@ -126,7 +152,7 @@ export const IndiPropPricing = ({ basePrice }) => {
                                 </div>
                                 <div style={{ width: '45%', paddingLeft: '5%', margin: 0 }}>
                                     <p style={{ margin: '0 0 20px 0', fontWeight: 'bolder', textAlign: 'right' }}>
-                                        <span>{basePrice}</span>
+                                        <span>{price}</span>
                                         <span style={{ display: 'block', fontWeight: 'normal', fontSize: "0.8em", color: '#0f7ae5' }}>View details</span>
                                     </p>
                                 </div>

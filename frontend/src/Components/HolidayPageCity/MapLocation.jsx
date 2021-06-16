@@ -32,7 +32,7 @@ export default function MapLocation(props) {
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [guest, setGuest] = useState(noOfGuest);
   const [query, setQuery] = useState(false);
-  const [value, setValue] = useState([checkinDate, checkOutDate]);
+  const [value, setValue] = useState([checkinDate || null, checkOutDate || null]);
   const [ModalIsopen2, setModalIsopen2] = useState(false);
   const [isLoading, setLoadng] = useState(true);
   const [isError, setisError] = useState(false);
@@ -67,7 +67,6 @@ export default function MapLocation(props) {
     dispatch(pricingAction);
     axios.get(`http://localhost:8001/hotels?city=${query || loadData('locn')}`)
       .then((res) => {
-        console.log(res.data);
         setInfo(res.data.data);
       })
       .catch((error) => {
@@ -78,16 +77,12 @@ export default function MapLocation(props) {
         setLoadng(false);
       });
   };
-  const Nil = {
-    data: query,
-  };
 
   const handleFruits = () => {
     setLoadng(true);
     setisError(false);
     axios.get(`http://localhost:8001/hotels?city=${location || loadData('locn')}`)
       .then((response) => {
-        console.log(response.data.data);
         setInfo(response.data.data);
       })
       .catch((err) => {
@@ -354,7 +349,7 @@ export default function MapLocation(props) {
               ))}
             </div>
             <div style={{ top: "0", position: "sticky" }}>
-              <GoogleMap2 location={Nil} />
+              <GoogleMap2/>
             </div>
           </div>
         </div>
