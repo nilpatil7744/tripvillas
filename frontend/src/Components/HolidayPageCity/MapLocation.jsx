@@ -19,28 +19,41 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { useDispatch, useSelector } from "react-redux";
 import Loadingg from "../Loading/Loadingg";
-import { searchdataquery } from "../../Redux/SearchDataHome/action";
 import { loadData, saveData } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
 import GoogleMap2 from "./MapLocnComponent/Map2";
+import { setPriceVariables } from "../../Redux/Pricing_Final/action";
+
 export default function MapLocation(props) {
+  const location = useSelector((state) => state.pricing.location);
+  const checkinDate = useSelector((state) => state.pricing.checkinDate);
+  const checkOutDate = useSelector((state) => state.pricing.checkOutDate);
+  const noOfGuest = useSelector((state) => state.pricing.noOfGuest);
   const [Info2, setInfo] = useState([]);
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
-  const [guest, setGuest] = useState("");
-  const [query, setQuery] = useState("");
-  const [value, setValue] = useState([null, null]);
+  const [guest, setGuest] = useState(noOfGuest);
+  const [query, setQuery] = useState(false);
+  const [value, setValue] = useState([
+    checkinDate || null,
+    checkOutDate || null,
+  ]);
   const [ModalIsopen2, setModalIsopen2] = useState(false);
   const [isLoading, setLoadng] = useState(true);
   const [isError, setisError] = useState(false);
   const dispatch = useDispatch();
-  const searchq = useSelector((state) => state.pricing.location);
 
-  if (searchq) {
-    saveData("locn", searchq);
+  if (location) {
+    saveData("locn", location);
   }
 
+  const payload = {
+    location: query,
+    checkinDate: value[0],
+    checkOutDate: value[1],
+    noOfGuest: guest,
+  };
+
   useEffect(() => {
-    // handleChange();
     handleFruits();
   }, []);
 
@@ -48,37 +61,26 @@ export default function MapLocation(props) {
     setGuest(event.target.value);
   };
 
-  console.log(searchq, "store nil");
-
   const handleChange = () => {
-    if (query === "") {
-      alert("Please select a location");
-    } else {
-      setLoadng(true);
-      setisError(false);
-      saveData("locn", query);
-      setEditModalIsOpen(false);
-      console.log(query);
+    setLoadng(true);
+    setisError(false);
+    saveData("locn", query);
+    setEditModalIsOpen(false);
 
-      const addTodoAction2 = searchdataquery(query);
-      dispatch(addTodoAction2);
-      axios
-        .get(`http://localhost:8001/hotels?city=${query}`)
-        .then((res) => {
-          console.log(res.data);
-          setInfo(res.data.data);
-        })
-        .catch((error) => {
-          console.log(error);
-          setisError(true);
-        })
-        .finally(() => {
-          setLoadng(false);
-        });
-    }
-  };
-  const Nil = {
-    data: query,
+    const pricingAction = setPriceVariables(payload);
+    dispatch(pricingAction);
+    axios
+      .get(`http://localhost:8001/hotels?city=${query || loadData("locn")}`)
+      .then((res) => {
+        setInfo(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setisError(true);
+      })
+      .finally(() => {
+        setLoadng(false);
+      });
   };
 
   const handleFruits = () => {
@@ -88,9 +90,8 @@ export default function MapLocation(props) {
     setLoadng(true);
     setisError(false);
     axios
-      .get(`http://localhost:8001/hotels?city=${searchq || loadData("locn")}`)
+      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}`)
       .then((response) => {
-        console.log(response.data.data);
         setInfo(response.data.data);
       })
       .catch((err) => {
@@ -471,7 +472,7 @@ export default function MapLocation(props) {
               ))}
             </div>
             <div style={{ top: "0", position: "sticky" }}>
-              <GoogleMap2 location={Nil} />
+              <GoogleMap2 />
             </div>
           </div>
         </div>
