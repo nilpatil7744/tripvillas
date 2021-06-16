@@ -18,7 +18,6 @@ import { logoutpage } from "../../Redux/LoginAuth/action";
 
 export const NavBar = () => {
   const [state, setState] = React.useState({ right: false });
-  const [isSigned, setIsSigned] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 

@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 const connect = () => {
-    return mongoose.connect(process.env.MONGODB_ATLAS_LINK , {
+    return mongoose.connect(process.env.MONGODB_ATLAS_LINK, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,
@@ -36,12 +36,22 @@ const Hotel = mongoose.model('hotels', hotelSchema);
 
 app.get('/hotels', async (req, res) => {
     const city = req.query.city;
+    const sort = req.query.sort;
     if (city === undefined) {
         const hotels = await Hotel.find({}).lean().exec();
         res.status(200).json({ data: hotels });
     } else {
-        const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).lean().exec();
-        res.status(200).json({ data: hotels });
+        if (sort === 'asc') {
+            const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).sort({ basePrice: 1 }).lean().exec();
+            res.status(200).json({ data: hotels });
+        } else if (sort === 'desc') {
+            const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).sort({ basePrice: -1 }).lean().exec();
+            res.status(200).json({ data: hotels });
+        }
+        else {
+            const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).lean().exec();
+            res.status(200).json({ data: hotels });
+        }
     }
 });
 
