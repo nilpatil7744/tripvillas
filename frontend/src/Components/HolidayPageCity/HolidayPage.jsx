@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { NavBar } from "../Home_NavBar/NavBar";
-
-///////////////////////////
-
-import homeSearchStyles from "../Home/Home_Search/HomeSearch.module.css";
+import { NavBar } from "../Home_NavBar/NavBar";import homeSearchStyles from "../Home/Home_Search/HomeSearch.module.css";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@material-ui/core/TextField";
 import DateRangePicker from "@material-ui/lab/DateRangePicker";
