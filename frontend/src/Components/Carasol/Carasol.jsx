@@ -46,7 +46,9 @@ const Carasol = () => {
           marginLeft: "20px",
         }}
       >
-        <h2 style={{ fontWeight: "lighter" }}>Top Destinations</h2>
+        <h2 style={{ fontWeight: "300", color: "#000000", marginLeft: "20px" }}>
+          Top Destinations
+        </h2>
       </div>
       <Slider {...settings}>
         {text.map((item, index) => (
@@ -62,11 +64,20 @@ const Carasol = () => {
                   alt=""
                 />
               </Link>
-
-              <h2 className="bg-text">
-                {item.city} <br /> <a href>Vacation Rental </a>
-              </h2>
             </div>
+            <h2
+              style={{
+                marginTop: "-110px",
+                position: "absolute",
+                color: "whitesmoke",
+                marginLeft: "120px",
+              }}
+            >
+              {item.city} <br />{" "}
+              <a href style={{ color: "white" }}>
+                Vacation Rental
+              </a>
+            </h2>
           </div>
         ))}
       </Slider>
