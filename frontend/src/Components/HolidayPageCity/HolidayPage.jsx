@@ -12,7 +12,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Loadingg from "../Loading/Loadingg";
-////////////////////
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
