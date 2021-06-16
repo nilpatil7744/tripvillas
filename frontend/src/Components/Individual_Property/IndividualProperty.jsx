@@ -37,7 +37,7 @@ export const IndividualProperty = () => {
                 <NavBar />
                 <div className={propertyStyles.individualPropMainFlexDiv674}>
                     <div>
-                        <IndiPropBreadCrumb />
+                        <IndiPropBreadCrumb {...data} />
                         <IndiPropTitle {...data} />
                         <IndiPropToggleMenu />
                         <IndiPropOverview />
