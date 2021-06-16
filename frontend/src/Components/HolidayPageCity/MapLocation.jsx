@@ -144,136 +144,142 @@ export default function MapLocation(props) {
             </button>
           </div>
 
-          <Modal
-            isOpen={editModalIsOpen}
-            onRequestClose={() => setEditModalIsOpen(false)}
-            className={styles.editModal}
-          >
-            <h1
-              style={{ color: "black", marginTop: "40px", marginLeft: "30px" }}
+          <div style={{ background: "red" }}>
+            <Modal
+              isOpen={editModalIsOpen}
+              onRequestClose={() => setEditModalIsOpen(false)}
+              className={styles.editModal}
             >
-              Modify Search
-            </h1>
-
-            <div>
-              <div className={homeSearchStyles.inp_location}>
-                <input
-                  type="text"
-                  name="location"
-                  placeholder="Location"
-                  onChange={(e) => setQuery(e.target.value)}
-                  style={{ width: "540px", marginLeft: "30px" }}
-                />
-              </div>
-
-              <div
+              <h1
                 style={{
-                  display: "flex",
-                  marginTop: "12px",
+                  color: "black",
+                  marginTop: "40px",
+                  marginLeft: "30px",
                 }}
+              >
+                Modify Search
+              </h1>
+
+              <div>
+                <div className={homeSearchStyles.inp_location}>
+                  <input
+                    type="text"
+                    name="location"
+                    placeholder="Location"
+                    onChange={(e) => setQuery(e.target.value)}
+                    style={{ width: "540px", marginLeft: "30px" }}
+                  />
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    marginTop: "12px",
+                  }}
+                >
+                  <br />
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DateRangePicker
+                      startText="Check In"
+                      endText="Check Out"
+                      value={value}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(startProps, endProps) => (
+                        <React.Fragment>
+                          <TextField
+                            {...startProps}
+                            helperText=""
+                            className={homeSearchStyles.chckk}
+                            style={{ width: "270px", marginLeft: "30px" }}
+                            size="small"
+                          />
+                          <TextField
+                            {...endProps}
+                            helperText=""
+                            className={homeSearchStyles.chckk}
+                            style={{ width: "270px" }}
+                            size="small"
+                          />
+                        </React.Fragment>
+                      )}
+                    />
+                  </LocalizationProvider>
+                  <br /> <br />
+                </div>
+
+                <div style={{ marginTop: "6px" }}>
+                  <Box sx={{ minWidth: 120 }}>
+                    <br /> <br />
+                    <FormControl fullWidth>
+                      <InputLabel
+                        size="small"
+                        id="guest-select-label"
+                        className={homeSearchStyles.guestInput}
+                        style={{ marginTop: "-40px", marginLeft: "30px" }}
+                      >
+                        Select Guests
+                      </InputLabel>
+                      <Select
+                        labelId="guest-select-label"
+                        id="guest-select"
+                        autoWidth={true}
+                        size="small"
+                        sx={{ minWidth: "160px", marginLeft: "30px" }}
+                        value={guest}
+                        label="Select Guests"
+                        onChange={handleGuest}
+                        style={{
+                          width: "540px",
+                          marginTop: "-40px",
+                        }}
+                      >
+                        {new Array(50).fill(0).map((item, index) => {
+                          return (
+                            <MenuItem
+                              key={`${index}gsts`}
+                              value={index + 1}
+                              style={{ width: "540px" }}
+                            >
+                              {index === 0
+                                ? `${index + 1} guest`
+                                : `${index + 1} guests`}
+                            </MenuItem>
+                          );
+                        })}
+                      </Select>
+                    </FormControl>
+                  </Box>
+                </div>
+              </div>
+              <div
+                className={styles.editModalButtons}
+                style={{ marginTop: "-20px" }}
               >
                 <br />
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DateRangePicker
-                    startText="Check In"
-                    endText="Check Out"
-                    value={value}
-                    onChange={(newValue) => {
-                      setValue(newValue);
-                    }}
-                    renderInput={(startProps, endProps) => (
-                      <React.Fragment>
-                        <TextField
-                          {...startProps}
-                          helperText=""
-                          className={homeSearchStyles.chckk}
-                          style={{ width: "270px", marginLeft: "30px" }}
-                          size="small"
-                        />
-                        <TextField
-                          {...endProps}
-                          helperText=""
-                          className={homeSearchStyles.chckk}
-                          style={{ width: "270px" }}
-                          size="small"
-                        />
-                      </React.Fragment>
-                    )}
-                  />
-                </LocalizationProvider>
-                <br /> <br />
+                <button
+                  onClick={handleChange}
+                  style={{ backgroundColor: "#0F7AE5" }}
+                >
+                  Search
+                </button>
+                <button
+                  onClick={() => setEditModalIsOpen(false)}
+                  style={{
+                    padding: "9px",
+                    width: "25%",
+                    marginLeft: "3px",
+                    backgroundColor: "#FFFFFF",
+                    color: "#333333",
+                    border: "1px solid gray",
+                  }}
+                >
+                  Cancel
+                </button>
               </div>
-
-              <div style={{ marginTop: "6px" }}>
-                <Box sx={{ minWidth: 120 }}>
-                  <br /> <br />
-                  <FormControl fullWidth>
-                    <InputLabel
-                      size="small"
-                      id="guest-select-label"
-                      className={homeSearchStyles.guestInput}
-                      style={{ marginTop: "-40px", marginLeft: "30px" }}
-                    >
-                      Select Guests
-                    </InputLabel>
-                    <Select
-                      labelId="guest-select-label"
-                      id="guest-select"
-                      autoWidth={true}
-                      size="small"
-                      sx={{ minWidth: "160px", marginLeft: "30px" }}
-                      value={guest}
-                      label="Select Guests"
-                      onChange={handleGuest}
-                      style={{
-                        width: "540px",
-                        marginTop: "-40px",
-                      }}
-                    >
-                      {new Array(50).fill(0).map((item, index) => {
-                        return (
-                          <MenuItem
-                            key={`${index}gsts`}
-                            value={index + 1}
-                            style={{ width: "540px" }}
-                          >
-                            {index === 0
-                              ? `${index + 1} guest`
-                              : `${index + 1} guests`}
-                          </MenuItem>
-                        );
-                      })}
-                    </Select>
-                  </FormControl>
-                </Box>
-              </div>
-            </div>
-            <div
-              className={styles.editModalButtons}
-              style={{ marginTop: "-20px" }}
-            >
-              <br />
-              <button
-                onClick={handleChange}
-                style={{ backgroundColor: "#0F7AE5" }}
-              >
-                Search
-              </button>
-              <button
-                onClick={() => setEditModalIsOpen(false)}
-                style={{
-                  padding: "9px",
-                  width: "25%",
-                  marginLeft: "3px",
-                  backgroundColor: "#FFFFFF",
-                  color: "#333333",
-                  border: "1px solid gray",
-                }}
-              >
-                Cancel
-              </button>
-            </div>
-          </Modal>
+            </Modal>
+          </div>
 
           {/* MODAL TO FOR CHECKBOX  */}
 

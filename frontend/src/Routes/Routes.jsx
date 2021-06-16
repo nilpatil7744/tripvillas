@@ -9,6 +9,7 @@ import HolidayPage from "../Components/HolidayPageCity/HolidayPage";
 import { Unlock } from "../Components/RealEstateUnlock/Unlock";
 import { SidebarPrivate } from "../Components/User/LoginNavbar";
 import MapLocation from "../Components/HolidayPageCity/MapLocation";
+import PaymentPage from "../Components/Payment/PaymentPage";
 function Routes() {
   return (
     <div>
@@ -46,6 +47,9 @@ function Routes() {
         </Route>
         <Route exact path="/new-dashboard">
           <SidebarPrivate />
+        </Route>
+        <Route exact path="/:id/payment">
+          <PaymentPage />
         </Route>
         <Route exact path="/start"></Route>
         <Route>404 PAGE NOT FOUND</Route>
