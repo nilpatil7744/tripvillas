@@ -3,10 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/Carasol.css";
 import { Link } from "react-router-dom";
-
+import { PointSpreadLoading } from "react-loadingg";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loadingg from "../Loading/Loadingg";
 
 const Carasol = () => {
   const [text, settext] = useState([]);
@@ -38,7 +37,7 @@ const Carasol = () => {
     slidesToScroll: 5,
     className: "slides",
   };
-  if (isLoading) return <h1>..... Loading ⏳</h1>;
+
   return (
     <div style={{ marginTop: "80px" }}>
       <div
