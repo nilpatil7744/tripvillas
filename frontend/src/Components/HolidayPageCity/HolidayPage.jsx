@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import { NavBar } from "../Home_NavBar/NavBar";
 
@@ -33,14 +32,9 @@ function HolidayPage(props) {
   const [guest, setGuest] = useState("");
   const [text2, setText2] = useState([]);
   const [isLoading, setLoadng] = useState(false);
-  const [isError, setError] = useState(false);
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
-
-  let id = useParams();
-
-  console.log(id, "idddd");
 
   /////////// Carasol
 
@@ -54,7 +48,6 @@ function HolidayPage(props) {
       .then((response) => {
         console.log(response.data.data);
         setText2(response.data.data);
-        setError(true);
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -76,11 +69,9 @@ function HolidayPage(props) {
 
   if (isLoading) return <Loadingg />;
 
-  ////////////////
   return (
     <div>
       <NavBar />
-      {/* /////////////// */}
 
       <div
         style={{
@@ -181,9 +172,7 @@ function HolidayPage(props) {
         </div>
       </div>
 
-      {/* ////////////////// */}
-
-      {/* /////////CARASOL <<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
+      {/*               CARASOL                   */}
 
       <div style={{ marginTop: "150px" }}>
         <div
@@ -232,9 +221,6 @@ function HolidayPage(props) {
           ))}
         </Slider>
       </div>
-
-      {/* 
-      .////////////////////// */}
 
       <GoogleMap1 />
     </div>

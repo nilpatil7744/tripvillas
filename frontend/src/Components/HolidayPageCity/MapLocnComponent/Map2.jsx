@@ -1,48 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {
-  GoogleMap,
-  withGoogleMap,
-  withScriptjs,
-  Marker,
-  InfoWindow,
-} from "react-google-maps";
+import { GoogleMap, withGoogleMap, withScriptjs, Marker, InfoWindow,} from "react-google-maps";
 import { useSelector } from "react-redux";
-
+import { loadData } from "../../../utils/localStorage";
 import Loadingg from "../../Loading/Loadingg";
 
-function Map2({ location }) {
+function Map2() {
   const [selectedPark, setSelectedPark] = useState(null);
   const [Info2, setInfo] = useState([]);
   const [isLoading, setLoadng] = useState(false);
-  const searchq = useSelector((state) => state.search.todos);
-  const searchq2 = useSelector((state) => state.search.todos2);
+  const location = useSelector((state) => state.pricing.location);
 
-  const handleChange = () => {
-    axios
-      .get(`http://localhost:8001/hotels?city=${searchq}`)
-      .then((res) => {
-        console.log(res.data);
-        setInfo(res.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  console.log(Info2, "phone");
   useEffect(() => {
-    handleChange();
-    handleFruits();
+    handleLocation();
   }, []);
 
-  const handleFruits = () => {
+  const handleLocation = () => {
     setLoadng(true);
-    const requestParam = {
-      method: "get",
-      url: `http://localhost:8001/hotels?city=${searchq2}`,
-    };
-    axios(requestParam)
+    axios.get(`http://localhost:8001/hotels?city=${location || loadData('locn')}`)
       .then((response) => {
         console.log(response.data.data);
         setInfo(response.data.data);
