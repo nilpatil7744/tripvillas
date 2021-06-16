@@ -41,11 +41,15 @@ app.get('/hotels', async (req, res) => {
         const hotels = await Hotel.find({}).lean().exec();
         res.status(200).json({ data: hotels });
     } else {
-        if (sort === undefined) {
+        if (sort === 'asc') {
             const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).sort({ basePrice: 1 }).lean().exec();
             res.status(200).json({ data: hotels });
-        } else {
+        } else if (sort === 'desc') {
             const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).sort({ basePrice: -1 }).lean().exec();
+            res.status(200).json({ data: hotels });
+        }
+        else {
+            const hotels = await Hotel.find({ $or: [{ city: city }, { state: city }] }).lean().exec();
             res.status(200).json({ data: hotels });
         }
     }
