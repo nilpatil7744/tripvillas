@@ -1,0 +1,10 @@
+.MapStyle {
+  display: flex;
+  overflow: auto;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.MapStyle::-webkit-scrollbar {
+  display: none;
+}

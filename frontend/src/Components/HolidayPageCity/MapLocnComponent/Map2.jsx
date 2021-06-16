@@ -1,10 +1,21 @@
+import styled from "styled-components";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { GoogleMap, withGoogleMap, withScriptjs, Marker, InfoWindow,} from "react-google-maps";
+import {
+  GoogleMap,
+  withGoogleMap,
+  withScriptjs,
+  Marker,
+  InfoWindow,
+} from "react-google-maps";
 import { useSelector } from "react-redux";
 import { loadData } from "../../../utils/localStorage";
 import Loadingg from "../../Loading/Loadingg";
-
+export const Mapstyle = styled.div`
+  width: 573px;
+  height: 800px;
+  margin-top: -50px;
+`;
 function Map2() {
   const [selectedPark, setSelectedPark] = useState(null);
   const [Info2, setInfo] = useState([]);
@@ -17,7 +28,8 @@ function Map2() {
 
   const handleLocation = () => {
     setLoadng(true);
-    axios.get(`http://localhost:8001/hotels?city=${location || loadData('locn')}`)
+    axios
+      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}`)
       .then((response) => {
         setInfo(response.data.data);
       })
@@ -76,20 +88,14 @@ const MapWrapped = withScriptjs(withGoogleMap(Map2));
 function GoogleMap2() {
   return (
     <div>
-      <div
-        style={{
-          width: "550px",
-          height: "680px",
-          marginLeft: "1%",
-        }}
-      >
+      <Mapstyle>
         <MapWrapped
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDV4NIiCAOs_91U_dXuN66AJ9Uzbjykvk4`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-      </div>
+      </Mapstyle>
     </div>
   );
 }

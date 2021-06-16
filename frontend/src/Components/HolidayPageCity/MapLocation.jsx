@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import { BsFilterLeft } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
 import { NavBar } from "../Home_NavBar/NavBar";
 import styles from "./Module2.module.css";
 import Modal from "react-modal";
-import GoogleMap2 from "./MapLocnComponent/Map2";
+import style from "./Map.module.css";
 import homeSearchStyles from "../Home/Home_Search/HomeSearch.module.css";
 import TextField from "@material-ui/core/TextField";
 import DateRangePicker from "@material-ui/lab/DateRangePicker";
@@ -21,25 +21,29 @@ import { useDispatch, useSelector } from "react-redux";
 import Loadingg from "../Loading/Loadingg";
 import { loadData, saveData } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
+import GoogleMap2 from "./MapLocnComponent/Map2";
 import { setPriceVariables } from "../../Redux/Pricing_Final/action";
 
 export default function MapLocation(props) {
   const location = useSelector((state) => state.pricing.location);
-  const checkinDate = useSelector(state => state.pricing.checkinDate);
-  const checkOutDate = useSelector(state => state.pricing.checkOutDate);
-  const noOfGuest = useSelector(state => state.pricing.noOfGuest);
+  const checkinDate = useSelector((state) => state.pricing.checkinDate);
+  const checkOutDate = useSelector((state) => state.pricing.checkOutDate);
+  const noOfGuest = useSelector((state) => state.pricing.noOfGuest);
   const [Info2, setInfo] = useState([]);
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
   const [guest, setGuest] = useState(noOfGuest);
   const [query, setQuery] = useState(false);
-  const [value, setValue] = useState([checkinDate || null, checkOutDate || null]);
+  const [value, setValue] = useState([
+    checkinDate || null,
+    checkOutDate || null,
+  ]);
   const [ModalIsopen2, setModalIsopen2] = useState(false);
   const [isLoading, setLoadng] = useState(true);
   const [isError, setisError] = useState(false);
   const dispatch = useDispatch();
 
   if (location) {
-    saveData('locn', location);
+    saveData("locn", location);
   }
 
   const payload = {
@@ -47,7 +51,7 @@ export default function MapLocation(props) {
     checkinDate: value[0],
     checkOutDate: value[1],
     noOfGuest: guest,
-  }
+  };
 
   useEffect(() => {
     handleFruits();
@@ -60,12 +64,13 @@ export default function MapLocation(props) {
   const handleChange = () => {
     setLoadng(true);
     setisError(false);
-    saveData('locn', query);
+    saveData("locn", query);
     setEditModalIsOpen(false);
 
-    const pricingAction = setPriceVariables(payload)
+    const pricingAction = setPriceVariables(payload);
     dispatch(pricingAction);
-    axios.get(`http://localhost:8001/hotels?city=${query || loadData('locn')}`)
+    axios
+      .get(`http://localhost:8001/hotels?city=${query || loadData("locn")}`)
       .then((res) => {
         setInfo(res.data.data);
       })
@@ -84,30 +89,35 @@ export default function MapLocation(props) {
     }
     setLoadng(true);
     setisError(false);
-    axios.get(`http://localhost:8001/hotels?city=${location || loadData('locn')}`)
+    axios
+      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}`)
       .then((response) => {
         setInfo(response.data.data);
       })
       .catch((err) => {
-        console.log(err)
-        setisError(true)
+        console.log(err);
+        setisError(true);
       })
       .finally(() => {
         setLoadng(false);
       });
   };
 
-
-  return (<>
-    {isLoading ? <Loadingg /> :
-      isError ? <h1>Error</h1> :
+  return (
+    <>
+      {isLoading ? (
+        <Loadingg />
+      ) : isError ? (
+        <h1>Error</h1>
+      ) : (
         <div>
           <NavBar />
           <div
             style={{
               width: "60%",
               padding: "13px",
-            }}>
+            }}
+          >
             <button
               style={{
                 height: "30px",
@@ -391,22 +401,21 @@ export default function MapLocation(props) {
               <button>Apply</button>
               <button
                 onClick={() => setModalIsopen2(false)}
-                style={{ padding: "9px", width: "25%", marginLeft: "15px" }} >
+                style={{ padding: "9px", width: "25%", marginLeft: "15px" }}
+              >
                 Cancel
               </button>
             </div>
           </Modal>
 
-          <div
-            style={{
-              display: "flex",
-              overflow: "auto",
-              alignItems: "flex-start",
-              height: "100vh",
-            }}>
+          <div className={style.MapStyle}>
             <div style={{ overflow: "auto" }}>
               {Info2?.map((item, index) => (
-                <Link style={{ textDecoration: 'none' }} key={`locn${index + 1}`} to={`./${item._id}/alor`}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  key={`locn${index + 1}`}
+                  to={`./${item._id}/alor`}
+                >
                   <div style={{ overflow: "auto" }}>
                     <div
                       style={{
@@ -463,10 +472,11 @@ export default function MapLocation(props) {
               ))}
             </div>
             <div style={{ top: "0", position: "sticky" }}>
-              <GoogleMap2/>
+              <GoogleMap2 />
             </div>
           </div>
         </div>
-    }</>
-  )
+      )}
+    </>
+  );
 }
