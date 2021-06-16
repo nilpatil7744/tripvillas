@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import { BsFilterLeft } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
 import { NavBar } from "../Home_NavBar/NavBar";
 import styles from "./Module2.module.css";
 import Modal from "react-modal";
-import GoogleMap2 from "./MapLocnComponent/Map2";
+import style from "./Map.module.css";
 import homeSearchStyles from "../Home/Home_Search/HomeSearch.module.css";
 import TextField from "@material-ui/core/TextField";
 import DateRangePicker from "@material-ui/lab/DateRangePicker";
@@ -22,7 +22,7 @@ import Loadingg from "../Loading/Loadingg";
 import { searchdataquery } from "../../Redux/SearchDataHome/action";
 import { loadData, saveData } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
-
+import GoogleMap2 from "./MapLocnComponent/Map2";
 export default function MapLocation(props) {
   const [Info2, setInfo] = useState([]);
   const [editModalIsOpen, setEditModalIsOpen] = useState(false);
@@ -407,14 +407,7 @@ export default function MapLocation(props) {
             </div>
           </Modal>
 
-          <div
-            style={{
-              display: "flex",
-              overflow: "auto",
-              alignItems: "flex-start",
-              height: "100vh",
-            }}
-          >
+          <div className={style.MapStyle}>
             <div style={{ overflow: "auto" }}>
               {Info2?.map((item, index) => (
                 <Link
