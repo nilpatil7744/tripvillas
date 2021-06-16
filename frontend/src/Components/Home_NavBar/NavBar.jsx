@@ -13,7 +13,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutpage } from "../../Redux/LoginAuth/action";
 
 export const NavBar = () => {
   const [state, setState] = React.useState({ right: false });
@@ -23,6 +24,7 @@ export const NavBar = () => {
 
   // >>>>>>>>>>>>>>>>>>>>>>>>
 
+  const dispatch = useDispatch();
   const togg = useSelector((state) => state.login.email);
 
   const { isAuth, username } = useSelector((state) => state.login);
@@ -44,6 +46,7 @@ export const NavBar = () => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
+    dispatch(logoutpage());
     setAnchorEl(null);
   };
 
@@ -179,12 +182,17 @@ export const NavBar = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem
-                sx={{ width: "150px", paddingLeft: "40px" }}
-                onClick={handleClose}
+              <Link
+                to="/new-login"
+                style={{ textDecoration: "none", color: "#000000" }}
               >
-                SIGN IN
-              </MenuItem>
+                <MenuItem
+                  sx={{ width: "150px", paddingLeft: "40px" }}
+                  onClick={handleClose}
+                >
+                  SIGN IN
+                </MenuItem>
+              </Link>
               <MenuItem
                 sx={{ width: "150px", paddingLeft: "40px" }}
                 onClick={handleClose}
