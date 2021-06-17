@@ -1,0 +1,127 @@
+.ribbon {
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.ribbon li {
+  color: #7c7c7c;
+  list-style: none;
+  padding: 8px 15px;
+  margin-bottom: 10px;
+}
+.content {
+  padding: 10px 14px;
+  margin-top: 3%;
+}
+.alert {
+  padding: 2px 10px;
+  margin-top: 0;
+  border-left-width: 5px;
+  border-left: 5px solid #468847;
+  background: #cde0c4;
+  color: #709971;
+  font-size: 15px;
+}
+.alert p {
+  font-weight: 700;
+  font-size: 18px;
+  color: #709971;
+  margin: 0;
+  padding: 5px 0px;
+}
+.alert a {
+  text-decoration: none;
+  background: #db4a67;
+  color: #e0e0e0;
+  padding: 5px;
+  border-radius: 2px;
+  border-color: #ca4862;
+}
+.btn {
+  padding: 10px 0px;
+}
+.btn button {
+  background-color: #3b9ff3;
+  border-color: #3292e2;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  padding: 8px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 2px;
+}
+.btn button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.box_top {
+  width: 100%;
+  display: flex;
+  background-color: #2c3742;
+  color: #fff;
+  padding: 1px;
+}
+.box_top a {
+  text-decoration: none;
+  background-color: #fff;
+  border-color: #ccc;
+  padding: 2px;
+  border-radius: 2px;
+}
+.box_top button {
+  color: #fff;
+  background-color: #a90329;
+  border-color: #900323;
+  padding: 6px 12px;
+  margin: 10px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.box_bottom {
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  margin-bottom: 2%;
+}
+.listing {
+  padding: 0 1%;
+  margin-bottom: 2%;
+}
+.basic_list {
+  padding: 10px;
+  width: 100%;
+  border-left: 1px solid #e0e0e0;
+}
+.basic_list a {
+  padding: 10px;
+}
+.footer {
+  background-color: #2c3742;
+  color: #fff;
+  padding: 15px;
+  position: fixed;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.form {
+  border: 1px solid #c9c9c9;
+  padding: 3%;
+}
+
+.form input {
+  width: 30%;
+  padding: 6px;
+  margin: 10px 40px;
+}
+.form label {
+  width: 100px;
+}

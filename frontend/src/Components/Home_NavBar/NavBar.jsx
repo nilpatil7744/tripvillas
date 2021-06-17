@@ -200,7 +200,7 @@ export const NavBar = () => {
               </MenuItem>
             </Menu>
             <Button style={{ marginLeft: "0.5%", marginRight:'0.5%' }} color="inherit">
-              AED <ArrowDropDownIcon />{" "}
+              INR <ArrowDropDownIcon />{" "}
             </Button>
             <IconButton
               edge="start"
