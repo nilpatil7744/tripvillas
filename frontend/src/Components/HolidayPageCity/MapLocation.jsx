@@ -25,6 +25,7 @@ import GoogleMap2 from "./MapLocnComponent/Map2";
 import { setPriceVariables } from "../../Redux/Pricing_Final/action";
 
 export default function MapLocation(props) {
+  const [sort, setSort] = React.useState(null);
   const location = useSelector((state) => state.pricing.location);
   const checkinDate = useSelector((state) => state.pricing.checkinDate);
   const checkOutDate = useSelector((state) => state.pricing.checkOutDate);
@@ -55,10 +56,14 @@ export default function MapLocation(props) {
 
   useEffect(() => {
     handleFruits();
-  }, []);
+  }, [sort]);
 
   const handleGuest = (event) => {
     setGuest(event.target.value);
+  };
+
+  const handleSort = (event) => {
+    setSort(event.target.value);
   };
 
   const handleChange = () => {
@@ -90,7 +95,7 @@ export default function MapLocation(props) {
     setLoadng(true);
     setisError(false);
     axios
-      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}`)
+      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}&sort=${sort}`)
       .then((response) => {
         setInfo(response.data.data);
       })
@@ -130,6 +135,23 @@ export default function MapLocation(props) {
             >
               <BsFilterLeft /> APPLY FILTERS
             </button>
+
+            <Box id="sortBox" className={styles.sortKaraDe}>
+              <FormControl fullWidth sx={{height : '100%'}}>
+                <InputLabel style={{top: '-9px'}} id="demo-simple-select-label">Sort By</InputLabel>
+                <Select
+                  sx={{height : '100%'}}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={sort}
+                  label="Sort By"
+                  onChange={handleSort}
+                >
+                  <MenuItem value={'asc'}>Price (Low To High)</MenuItem>
+                  <MenuItem value={'desc'}>Price (High To Low)</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
 
             <button
               style={{

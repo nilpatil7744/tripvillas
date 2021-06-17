@@ -66,3 +66,15 @@
   margin-left: 6%;
   padding: 10px;
 }
+.sortKaraDe {
+  outline: none;
+  color: rgb(30, 135, 240);
+  border: none;
+  height: 34px;
+  width: 160px;
+  position: absolute;
+  top: 18vh;
+  left: 47vw;
+  font-size: 17px;
+  cursor: pointer;
+}

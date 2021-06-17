@@ -18,7 +18,6 @@ import { logoutpage } from "../../Redux/LoginAuth/action";
 
 export const NavBar = () => {
   const [state, setState] = React.useState({ right: false });
-  const [isSigned, setIsSigned] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -154,8 +153,8 @@ export const NavBar = () => {
                 />
               </Link>
             </div>
+            <div style={{height: '100%', flexGrow:'100'}}></div>
             <Button
-              style={{ marginLeft: "79%" }}
               id="basic-button"
               aria-controls="basic-menu"
               aria-haspopup="true"
@@ -200,7 +199,7 @@ export const NavBar = () => {
                 SIGN UP
               </MenuItem>
             </Menu>
-            <Button style={{ marginLeft: "0.3%" }} color="inherit">
+            <Button style={{ marginLeft: "0.5%", marginRight:'0.5%' }} color="inherit">
               AED <ArrowDropDownIcon />{" "}
             </Button>
             <IconButton
