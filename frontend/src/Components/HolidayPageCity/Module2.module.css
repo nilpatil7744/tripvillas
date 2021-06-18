@@ -77,4 +77,5 @@
   left: 47vw;
   font-size: 17px;
   cursor: pointer;
+  z-index: 0;
 }
