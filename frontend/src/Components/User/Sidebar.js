@@ -1,64 +1,64 @@
-import React from "react";
+// import React from "react";
 
-import { FaCheck } from "react-icons/fa";
+// import { FaCheck } from "react-icons/fa";
 
-import { GrGroup } from "react-icons/gr";
-import { BsStar } from "react-icons/bs";
-import { AiFillBank } from "react-icons/ai";
+// import { GrGroup } from "react-icons/gr";
+// import { BsStar } from "react-icons/bs";
+// import { AiFillBank } from "react-icons/ai";
 
-import { BiDollar } from "react-icons/bi";
+// import { BiDollar } from "react-icons/bi";
 
-import { AiOutlineUnorderedList } from "react-icons/ai";
+// import { AiOutlineUnorderedList } from "react-icons/ai";
 
-import { FaBuilding } from "react-icons/fa";
+// import { FaBuilding } from "react-icons/fa";
 
 export const SidebarData = [
   {
     title: "My Properties",
     path: "/property",
-    icon: <AiOutlineUnorderedList />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "Properties Sale",
     path: "/propertiesSale ",
-    icon: <FaBuilding />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "Bookings",
     path: "/Booking",
-    icon: <FaCheck />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "Payouts",
     path: "/team",
-    icon: <BiDollar />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "Bank Accounts",
     path: "/bankaccounts",
-    icon: <AiFillBank />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "Reviews",
     path: "/reviews",
-    icon: <BsStar />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "My Customer",
     path: "/cutomer",
-    icon: <GrGroup />,
+    icon: "",
     cName: "nav-text22",
   },
   {
     title: "My Profile",
     path: "/profile",
-    icon: <GrGroup />,
+    icon: "",
     cName: "nav-text22",
   },
 ];

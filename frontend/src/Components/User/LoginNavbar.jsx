@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { Link, Redirect } from "react-router-dom";
 import { SidebarData } from "./Sidebar";
-import { FaUserFriends } from "react-icons/fa";
+
 import { IconContext } from "react-icons";
 import "./LoginNavbar.css";
 import { useSelector } from "react-redux";
@@ -39,10 +39,7 @@ const SidebarPrivate = () => {
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
-            <li className="nav-text1">
-              <FaUserFriends />
-              {useremail}
-            </li>
+            <li className="nav-text1">{useremail}</li>
             {SidebarData.map((item, index) => {
               return (
                 <div>
