@@ -79,10 +79,10 @@ export const IndiPropPricing = ({ basePrice, _id }) => {
 
   const handlePrice = () => {
     const payload = {
-      price : price
-    }
+      price: price,
+    };
     dispatch(setFinalPrice(payload));
-  }
+  };
 
   return (
     <div className={propertyStyles.individualPropPricingMain}>
