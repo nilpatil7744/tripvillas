@@ -23,6 +23,7 @@ import { loadData, saveData } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
 import GoogleMap2 from "./MapLocnComponent/Map2";
 import { setPriceVariables } from "../../Redux/Pricing_Final/action";
+import { ErrorPage } from "../Error_Page/ErrorPage";
 
 export default function MapLocation(props) {
   const [sort, setSort] = React.useState(null);
@@ -95,7 +96,11 @@ export default function MapLocation(props) {
     setLoadng(true);
     setisError(false);
     axios
-      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}&sort=${sort}`)
+      .get(
+        `http://localhost:8001/hotels?city=${
+          location || loadData("locn")
+        }&sort=${sort}`
+      )
       .then((response) => {
         setInfo(response.data.data);
       })
@@ -113,7 +118,7 @@ export default function MapLocation(props) {
       {isLoading ? (
         <Loadingg />
       ) : isError ? (
-        <h1>Error</h1>
+        <ErrorPage />
       ) : (
         <div>
           <NavBar />
@@ -135,23 +140,6 @@ export default function MapLocation(props) {
             >
               <BsFilterLeft /> APPLY FILTERS
             </button>
-
-            <Box id="sortBox" className={styles.sortKaraDe}>
-              <FormControl fullWidth sx={{height : '100%'}}>
-                <InputLabel style={{top: '-9px'}} id="demo-simple-select-label">Sort By</InputLabel>
-                <Select
-                  sx={{height : '100%'}}
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={sort}
-                  label="Sort By"
-                  onChange={handleSort}
-                >
-                  <MenuItem value={'asc'}>Price (Low To High)</MenuItem>
-                  <MenuItem value={'desc'}>Price (High To Low)</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
 
             <button
               style={{
@@ -391,7 +379,6 @@ export default function MapLocation(props) {
                   "Guesthouse",
                 ].map((item) => (
                   <React.Fragment key={item}>
-                    {" "}
                     <br /> <br />
                     <input
                       type="checkbox"
@@ -437,6 +424,28 @@ export default function MapLocation(props) {
           </Modal>
 
           <div className={style.MapStyle}>
+            <Box id="sortBox" className={styles.sortKaraDe}>
+              <FormControl fullWidth sx={{ height: "100%" }}>
+                <InputLabel
+                  style={{ top: "-9px" }}
+                  id="demo-simple-select-label"
+                >
+                  Sort By
+                </InputLabel>
+                <Select
+                  sx={{ height: "100%" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={sort}
+                  label="Sort By"
+                  onChange={handleSort}
+                >
+                  <MenuItem value={"asc"}>Price (Low To High)</MenuItem>
+                  <MenuItem value={"desc"}>Price (High To Low)</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+
             <div style={{ overflow: "auto" }}>
               {Info2?.map((item, index) => (
                 <Link
@@ -481,7 +490,7 @@ export default function MapLocation(props) {
                               fontFamily: "sans-serif",
                             }}
                           >
-                            {item.basePrice} ₹
+                            ₹ {item.basePrice}
                           </h2>
 
                           <button

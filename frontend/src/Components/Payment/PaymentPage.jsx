@@ -5,8 +5,14 @@ import Confetti from "react-confetti";
 import styles from "../HolidayPageCity/Map.module.css";
 import Modal from "react-modal";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { loadData, saveData } from "../../utils/localStorage";
 function PaymentPage() {
+  const myPrice = useSelector((state) => state.pricing.price);
+  if (myPrice) {
+    saveData("myPrice", myPrice);
+  }
+  const price = myPrice ? myPrice : Number(loadData("myPrice"));
   var obj1 = {
     name: "",
     surname: "",
@@ -173,7 +179,7 @@ function PaymentPage() {
                 >
                   Sub Total
                   .............................................................................................................
-                  ₹ 7920.00
+                  ₹ {price}
                 </h2>
                 <h2
                   style={{
@@ -201,7 +207,7 @@ function PaymentPage() {
                 <h1>
                   Total
                   ..................................................................................
-                  ₹7920.00
+                  ₹{price}
                 </h1>
                 <hr />
                 <h3
