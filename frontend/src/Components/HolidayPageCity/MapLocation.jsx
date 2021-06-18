@@ -23,6 +23,7 @@ import { loadData, saveData } from "../../utils/localStorage";
 import { Link } from "react-router-dom";
 import GoogleMap2 from "./MapLocnComponent/Map2";
 import { setPriceVariables } from "../../Redux/Pricing_Final/action";
+import { ErrorPage } from "../Error_Page/ErrorPage";
 
 export default function MapLocation(props) {
   const [sort, setSort] = React.useState(null);
@@ -113,7 +114,7 @@ export default function MapLocation(props) {
       {isLoading ? (
         <Loadingg />
       ) : isError ? (
-        <h1>Error</h1>
+        <ErrorPage/>
       ) : (
         <div>
           <NavBar />

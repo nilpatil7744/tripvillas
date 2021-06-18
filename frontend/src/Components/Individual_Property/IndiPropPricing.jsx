@@ -12,15 +12,17 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import DoneIcon from "@material-ui/icons/Done";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadData, saveData } from "../../utils/localStorage";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { setFinalPrice } from "../../Redux/Pricing_Final/action";
 
-export const IndiPropPricing = ({ basePrice }) => {
+export const IndiPropPricing = ({ basePrice, _id }) => {
   const checkinDate = useSelector((state) => state.pricing.checkinDate);
   const checkOutDate = useSelector((state) => state.pricing.checkOutDate);
   const noOfGuest = useSelector((state) => state.pricing.noOfGuest);
+  const dispatch = useDispatch();
 
   const [noOfUnits, setNoOfUnits] = useState(null);
   const [value, setValue] = useState([
@@ -72,7 +74,15 @@ export const IndiPropPricing = ({ basePrice }) => {
         (guestNum - 1) * (basePrice / 3)
     );
     setPrice(updatedPrice * noOfUnits);
+    dispatch(setFinalPrice(price));
   }, [guestNum, endMonth, stMonth, stDate, endDate, basePrice, noOfUnits]);
+
+  const handlePrice = () => {
+    const payload = {
+      price : price
+    }
+    dispatch(setFinalPrice(payload));
+  }
 
   return (
     <div className={propertyStyles.individualPropPricingMain}>
@@ -301,8 +311,9 @@ export const IndiPropPricing = ({ basePrice }) => {
                   Request To Book
                 </button>
               ) : (
-                <Link to="/:id/payment">
+                <Link to={`/${_id}/payment`}>
                   <button
+                    onClick={handlePrice}
                     style={{ backgroundColor: "#1e87f0" }}
                     className={propertyStyles.individualPropRqsToBookBtn}
                   >
