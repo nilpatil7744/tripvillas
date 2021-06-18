@@ -92,6 +92,7 @@ function GoogleMap1() {
           height: "400px",
           marginLeft: "2%",
           marginTop: "180px",
+        }}
       >
         <MapWrapped
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDV4NIiCAOs_91U_dXuN66AJ9Uzbjykvk4`}

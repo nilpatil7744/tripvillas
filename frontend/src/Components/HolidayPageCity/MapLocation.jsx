@@ -396,7 +396,6 @@ export default function MapLocation(props) {
                   style={{ height: "16px", width: "16px" }}
                 />
                 <label style={{ fontSize: "15px", color: "red" }}>
-                  {" "}
                   High To Low
                 </label>
                 <br /> <br />
@@ -424,7 +423,7 @@ export default function MapLocation(props) {
           </Modal>
 
           <div className={style.MapStyle}>
-            <Box id="sortBox" className={styles.sortKaraDe}>
+            <Box id="sortBox" className={styles.sortK}>
               <FormControl fullWidth sx={{ height: "100%" }}>
                 <InputLabel
                   style={{ top: "-9px" }}

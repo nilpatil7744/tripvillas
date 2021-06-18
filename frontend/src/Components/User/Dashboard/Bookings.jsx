@@ -1,6 +1,5 @@
 import React from "react";
 import { Footer } from "./Footer";
-import style from "./Properties.module.css";
 
 export const Bookings = () => {
   return (
