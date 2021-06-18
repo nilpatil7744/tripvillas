@@ -4,9 +4,11 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { Link, Redirect } from "react-router-dom";
 import { SidebarData } from "./Sidebar";
 
+import { useDispatch } from "react-redux";
 import { IconContext } from "react-icons";
 import "./LoginNavbar.css";
 import { useSelector } from "react-redux";
+import { logoutpage } from "../../Redux/LoginAuth/action";
 const SidebarPrivate = () => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -15,6 +17,10 @@ const SidebarPrivate = () => {
   const togg = useSelector((state) => state.login.isAuth);
 
   const useremail = useSelector((state) => state.login.email);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logoutpage());
+  };
 
   return togg ? (
     <>
@@ -35,6 +41,7 @@ const SidebarPrivate = () => {
             size="30px"
             color="whitesmoke"
             style={{ marginLeft: "80%" }}
+            onClick={handleLogout}
           />
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
