@@ -6,11 +6,7 @@ import { Footer } from "./Footer";
 export const Properties = () => {
   return (
     <div>
-      <div className={style.ribbon}>
-        <li>
-          Home / <span>Properties</span>
-        </li>
-      </div>
+      <div className={style.ribbon}></div>
       <div className={style.content}>
         <div className={style.alert}>
           <p>You must have a bank account in a country that Supports Stripe.</p>

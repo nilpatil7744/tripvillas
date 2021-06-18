@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainDiv = styled.div`
   background-color: #1e87f0;
-  height: 200px;
+  height: 163px;
   width: 800px;
   padding: 10px;
   margin-left: 40px;
@@ -10,7 +10,8 @@ export const MainDiv = styled.div`
 
 export const Atm = styled.div`
   width: 600px;
-  background-color: #282828;
+  height: 800px;
+
   margin-top: 20px;
   margin-left: 30px;
 `;

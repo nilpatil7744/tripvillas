@@ -15,19 +15,19 @@ import { FaBuilding } from "react-icons/fa";
 export const SidebarData = [
   {
     title: "My Properties",
-    path: "/start",
+    path: "/property",
     icon: <AiOutlineUnorderedList />,
     cName: "nav-text22",
   },
   {
     title: "Properties Sale",
-    path: "/reports",
+    path: "/propertiesSale ",
     icon: <FaBuilding />,
     cName: "nav-text22",
   },
   {
     title: "Bookings",
-    path: "/Bookings",
+    path: "/Booking",
     icon: <FaCheck />,
     cName: "nav-text22",
   },
@@ -39,25 +39,25 @@ export const SidebarData = [
   },
   {
     title: "Bank Accounts",
-    path: "/messages",
+    path: "/bankaccounts",
     icon: <AiFillBank />,
     cName: "nav-text22",
   },
   {
     title: "Reviews",
-    path: "/support2",
+    path: "/reviews",
     icon: <BsStar />,
     cName: "nav-text22",
   },
   {
     title: "My Customer",
-    path: "/support3",
+    path: "/cutomer",
     icon: <GrGroup />,
     cName: "nav-text22",
   },
   {
     title: "My Profile",
-    path: "/support4",
+    path: "/profile",
     icon: <GrGroup />,
     cName: "nav-text22",
   },
