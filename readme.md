@@ -1,7 +1,4 @@
 
-![Logo](https://d2v8elt324ukrb.cloudfront.net/static/riotuikit/images/logo.c72056a22f91.png)
-
-    
 # TripVillas Clone
 
 Tripvillas is one of Asia's largest Holiday Home Rental Companies where owners of private homes could create a simple profile for their property and then correspond with like minded families who would be interested in staying in their homes as an alternate to hotels.
@@ -65,3 +62,6 @@ Tripvillas is one of Asia's largest Holiday Home Rental Companies where owners o
 **Server:** Express.js, Node.js
 
   
+![Logo](https://d2v8elt324ukrb.cloudfront.net/static/riotuikit/images/logo.c72056a22f91.png)
+
+    
