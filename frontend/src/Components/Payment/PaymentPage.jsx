@@ -26,6 +26,10 @@ function PaymentPage() {
   const [editModalIsOpen3, setEditModalIsOpen3] = useState(false);
   const { name, surname, card, month, cvv } = query;
 
+  const togg = useSelector((state) => state.login.isAuth);
+
+  console.log(togg, "mil");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -178,8 +182,8 @@ function PaymentPage() {
                   }}
                 >
                   Sub Total
-                  .............................................................................................................
-                  ₹ {price}
+                  ..........................................................................................................
+                  ₹{price}.00
                 </h2>
                 <h2
                   style={{
@@ -207,7 +211,7 @@ function PaymentPage() {
                 <h1>
                   Total
                   ..................................................................................
-                  ₹{price}
+                  ₹{price}.00
                 </h1>
                 <hr />
                 <h3
@@ -316,7 +320,7 @@ function PaymentPage() {
             className={styles.editModal}
           >
             <div style={{ marginTop: "20px" }}>
-              <div style={{ marginLeft: "330px" }}>
+              <div style={{ marginLeft: "30px" }}>
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRd0jf5ws5VNDS-T7d9Q70G6o3t07zExvQjA&usqp=CAU"
                   alt=""
@@ -335,12 +339,12 @@ function PaymentPage() {
                 <div style={{ textAlign: "left" }}>
                   <Input1
                     type="text"
-                    placeholder="Write ur Name"
+                    placeholder="Write Your Name"
                     onChange={handleChange}
                     value={name}
                     name="name"
                     style={{
-                      marginLeft: "30px",
+                      marginLeft: "10px",
                       // backgroundColor: "#282828",
                       borderBottomColor: "red",
                       borderRight: "none",
@@ -354,7 +358,7 @@ function PaymentPage() {
                   />
                   <Input1
                     type="text"
-                    placeholder="Last name"
+                    placeholder="Last Name"
                     onChange={handleChange}
                     value={surname}
                     name="surname"

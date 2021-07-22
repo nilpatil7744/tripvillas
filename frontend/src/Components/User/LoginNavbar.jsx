@@ -10,7 +10,7 @@ import "./LoginNavbar.css";
 import { useSelector } from "react-redux";
 import { logoutpage } from "../../Redux/LoginAuth/action";
 const SidebarPrivate = () => {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -45,7 +45,7 @@ const SidebarPrivate = () => {
           />
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={showSidebar}>
+          <ul className="nav-menu-items">
             <li className="nav-text1">{useremail}</li>
             {SidebarData.map((item, index) => {
               return (

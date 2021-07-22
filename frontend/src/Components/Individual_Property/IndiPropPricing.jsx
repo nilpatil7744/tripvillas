@@ -225,7 +225,7 @@ export const IndiPropPricing = ({ basePrice, _id }) => {
                     label="Select Guests"
                     onChange={handleGuest}
                   >
-                    {new Array(5).fill(0).map((item, index) => {
+                    {new Array(50).fill(0).map((item, index) => {
                       return (
                         <MenuItem key={`${index}gsts`} value={index + 1}>
                           {index === 0
@@ -289,7 +289,7 @@ export const IndiPropPricing = ({ basePrice, _id }) => {
                         textAlign: "right",
                       }}
                     >
-                      <span>{price}</span>
+                      <span> ₹{price}.00</span>
                       <span
                         style={{
                           display: "block",
