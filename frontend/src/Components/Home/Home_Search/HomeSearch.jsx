@@ -21,18 +21,17 @@ export const HomeSearch = () => {
 
   const payload = {
     location: query2,
-    checkinDate : value[0],
-    checkOutDate : value[1],
-    noOfGuest : guest,
-  }
+    checkinDate: value[0],
+    checkOutDate: value[1],
+    noOfGuest: guest,
+  };
 
   const handleGuest = (event) => {
     setGuest(event.target.value);
   };
 
-
   const handleSubmit = () => {
-    const pricingAction = setPriceVariables(payload)
+    const pricingAction = setPriceVariables(payload);
     dispatch(pricingAction);
   };
 
@@ -44,7 +43,7 @@ export const HomeSearch = () => {
           alt="backGround"
         />
         <div className={homeSearchStyles.textDiv}>
-          <h1 style={{ fontWeight: "bold", color: "white" }}>
+          <h1 style={{ fontWeight: "bold", color: "white", textAlign: "left" }}>
             Book <span style={{ textDecoration: "line-through" }}>Hotels</span>{" "}
             Vacation Rentals <br /> Top Holiday Homes - Villas, Apartments &
             Homestays

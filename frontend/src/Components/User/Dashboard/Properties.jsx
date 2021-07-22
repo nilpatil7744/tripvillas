@@ -3,10 +3,12 @@ import style from "./Properties.module.css";
 import { AiFillHome } from "react-icons/ai";
 import { TiExportOutline } from "react-icons/ti";
 import { Footer } from "./Footer";
+
 export const Properties = () => {
   return (
     <div>
       <div className={style.ribbon}></div>
+
       <div className={style.content}>
         <div className={style.alert}>
           <p>You must have a bank account in a country that Supports Stripe.</p>

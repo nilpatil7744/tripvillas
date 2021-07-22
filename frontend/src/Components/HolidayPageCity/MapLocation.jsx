@@ -479,17 +479,92 @@ export default function MapLocation(props) {
                           <h2 style={{ fontsize: "24px", color: "#333333" }}>
                             {item.topTitle}
                           </h2>
-                          <p style={{ color: "#1E87F0", fontsize: "24px" }}>
-                            {item.state}
+                          <p
+                            style={{ color: "#1E87F0", fontsize: "24px" }}
+                            className={styles.underline1}
+                          >
+                            {item.state}, India
                           </p>
+
+                          {/* ///////////////////////////////// */}
+
+                          <div
+                            style={{
+                              width: "50%",
+                              boxSizing: "border-box",
+                              marginBottom: "20px",
+                              display: "flex",
+                            }}
+                          >
+                            <div style={{ display: "flex" }}>
+                              <div style={{ padding: "7px 15px 8px 0px" }}>
+                                <span
+                                  style={{
+                                    border: "1px solid #ddddde",
+                                    color: "#666",
+                                    padding: "3px",
+                                  }}
+                                >
+                                  AC
+                                </span>
+                              </div>
+                              <div style={{ padding: "7px 15px 8px 0px" }}>
+                                <span
+                                  style={{
+                                    border: "1px solid #ddddde",
+                                    color: "#666",
+                                    padding: "3px",
+                                  }}
+                                >
+                                  WARDROBE
+                                </span>
+                              </div>
+                              <div style={{ padding: "7px 15px 8px 0px" }}>
+                                <span
+                                  style={{
+                                    border: "1px solid #ddddde",
+                                    color: "#666",
+                                    padding: "3px",
+                                  }}
+                                >
+                                  BALCONY
+                                </span>
+                              </div>
+                              <div style={{ padding: "7px 15px 8px 0px" }}>
+                                <span
+                                  style={{
+                                    border: "1px solid #ddddde",
+                                    color: "#666",
+                                    padding: "3px",
+                                  }}
+                                >
+                                  TV
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* //////////////////////////////////// */}
                           <h2
                             style={{
                               color: "black",
                               fontsize: "24px",
                               fontFamily: "sans-serif",
+                              padding: "3px",
                             }}
                           >
-                            ₹ {item.basePrice}
+                            ₹{item.basePrice}.00
+                            <a
+                              href
+                              style={{
+                                fontSize: "14px",
+                                color: "gray",
+                                fontWeight: "lighter",
+                                marginLeft: "4px",
+                              }}
+                            >
+                              Per night
+                            </a>
                           </h2>
 
                           <button

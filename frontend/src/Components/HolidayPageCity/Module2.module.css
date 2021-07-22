@@ -79,3 +79,8 @@
   cursor: pointer;
   z-index: 0;
 }
+
+.underline1:hover {
+  border-bottom: 1px solid blue;
+  width: 20%;
+}

@@ -310,6 +310,7 @@
 .individualPropPricingMain {
   width: 25%;
   box-sizing: border-box;
+  text-align: left !important;
 }
 .individualPropPricingSUB {
   position: sticky;

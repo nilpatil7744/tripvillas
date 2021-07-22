@@ -72,7 +72,7 @@ function Map2() {
               <h5>Ref id #{selectedPark._id}</h5>
               {selectedPark.tagsArr.map((item) => (
                 <a href style={{ color: "#1e87f0" }}>
-                  {item} |
+                  {item}
                 </a>
               ))}
             </div>
@@ -90,7 +90,7 @@ function GoogleMap2() {
     <div>
       <Mapstyle>
         <MapWrapped
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDV4NIiCAOs_91U_dXuN66AJ9Uzbjykvk4`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC6U2DIcSLjXpucjRvwbqKMtzja1VmrH1c`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
@@ -99,5 +99,5 @@ function GoogleMap2() {
     </div>
   );
 }
-
+// AIzaSyD2PkvzFUzR08UAM8theN9JE268imbE6Rs
 export default GoogleMap2;

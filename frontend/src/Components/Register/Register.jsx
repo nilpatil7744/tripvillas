@@ -3,7 +3,7 @@ import "../../Styles/Register.css";
 import RegInfo from "./RegInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { registeruser } from "../../Redux/Register/action";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Loadingg from "../Loading/Loadingg";
 const Register = () => {
   const obj1 = {
@@ -20,6 +20,7 @@ const Register = () => {
 
   const dispatch = useDispatch();
 
+  const [done, notDone] = useState(false);
   const {
     name2,
     lastname,
@@ -66,6 +67,7 @@ const Register = () => {
       setQuery(payload);
       console.log(payload);
       alert("Register successfully");
+      notDone(true);
       dispatch(registeruser(payload));
     } else {
       if (query.terms === false) {
@@ -89,7 +91,7 @@ const Register = () => {
   };
 
   if (isLoading) return <Loadingg />;
-  return (
+  return !done ? (
     <div>
       <div>
         <div className="navbar">
@@ -107,20 +109,21 @@ const Register = () => {
               to="/new-login"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Sign In
+              SIGN IN
             </Link>
           </button>
         </div>
         <br /> <br /> <br />
         <div style={{ display: "flex" }}>
-          <div classname="disnav">
+          <div classname="disnav" style={{ marginTop: "-20px" }}>
             <RegInfo />
           </div>
           <div
             style={{
-              border: "1px solid gray",
-              flex: "0.8",
-              marginLeft: "60px",
+              border: "1px solid #DDDDDD",
+              flex: "0.64",
+              marginLeft: "30px",
+              marginTop: "-30px",
             }}
           >
             <header className="header-navbar">
@@ -150,11 +153,12 @@ const Register = () => {
             <div
               style={{
                 display: "flex",
-                borderBottom: "1px solid rgb(163, 156, 156)",
+                borderBottom: "1px solid #DDDDDD",
+                padding: "10px",
               }}
             >
               <br /> <br />
-              <p style={{ marginLeft: "20px" }}>Mobile With Country Code</p>
+              <p style={{ marginLeft: "5px" }}>Mobile With Country Code</p>
               <input
                 type="text"
                 placeholder="+91"
@@ -172,9 +176,49 @@ const Register = () => {
                 className="register-input4"
               />
             </div>
-            <br />
+
+            {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
 
             <div>
+              <div className="input-icons2">
+                <i className="fa fa-envelope icon2"></i>
+                <input
+                  className="input-field2"
+                  type="text"
+                  placeholder="Email Address"
+                  onChange={handleChange}
+                  value={email}
+                  name="email"
+                />
+              </div>
+
+              <div className="input-icons2">
+                <i className="fa fa-lock icon icon2"></i>
+                <input
+                  className="input-field"
+                  type="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  value={password}
+                  name="password"
+                />
+              </div>
+
+              <div className="input-icons2">
+                <i className="fa fa-lock icon icon2"></i>
+                <input
+                  className="input-field2"
+                  type="password"
+                  placeholder="Confirm Password"
+                  onChange={handleChange}
+                  value={confirmpassword}
+                  name="confirmpassword"
+                />
+              </div>
+            </div>
+
+            {/* <div>
+              
               <input
                 type="text"
                 placeholder="Email Address"
@@ -203,12 +247,15 @@ const Register = () => {
                 name="confirmpassword"
                 className="register-input7"
               />
-            </div>
+            </div> */}
+
+            {/* 
+            ///////////////////////////////////////////////////////////////////////////////////// */}
             <br />
             <div
               style={{
                 display: "flex",
-                borderBottom: "1px solid rgb(163, 156, 156)",
+                borderBottom: "1px solid #DDDDDD",
               }}
             >
               <input
@@ -226,29 +273,32 @@ const Register = () => {
               <p
                 style={{
                   marginTop: "-1px",
-                  marginLeft: "20px",
+                  marginLeft: "10px",
                 }}
               >
                 I accept all
                 <a href="https://www.tripvillas.com/"> terms & conditions</a>
               </p>
             </div>
-            <br />
+
             <div
               style={{
-                borderBottom: "1px solid rgb(163, 156, 156)",
-                backgroundColor: "#F8F8FE6",
+                borderBottom: "1px solid #DDDDDD",
+                backgroundColor: "#F9F9F9",
+                padding: "15px",
+                textAlign: "right",
               }}
             >
               <button className="btn-register" onClick={handleRegister}>
                 REGISTER
               </button>
-              <br /> <br />
             </div>
           </div>
         </div>
       </div>
     </div>
+  ) : (
+    <Redirect to="/new-login" />
   );
 };
 

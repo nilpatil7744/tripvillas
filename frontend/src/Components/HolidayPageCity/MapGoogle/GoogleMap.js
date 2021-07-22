@@ -95,7 +95,7 @@ function GoogleMap1() {
         }}
       >
         <MapWrapped
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDV4NIiCAOs_91U_dXuN66AJ9Uzbjykvk4`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC6U2DIcSLjXpucjRvwbqKMtzja1VmrH1c`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
@@ -104,5 +104,5 @@ function GoogleMap1() {
     </div>
   );
 }
-
+// AIzaSyDpQGbRqTvrI_0ZEQVnXcbU5gPHu6cZx90
 export default GoogleMap1;
