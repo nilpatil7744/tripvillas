@@ -23,7 +23,7 @@ export const getHotel = (id) => (dispatch, getState) => {
     const reqAction = getHotelReq();
     dispatch(reqAction);
 
-    return axios.get(`http://localhost:8001/hotels/${id}`)
+    return axios.get(`https://tripvillas-backend.herokuapp.com/hotels/${id}`)
     .then(res => {
         const sucAction = getHotelSuc(res.data.data);
         dispatch(sucAction);

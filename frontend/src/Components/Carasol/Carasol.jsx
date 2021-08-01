@@ -14,7 +14,7 @@ const Carasol = () => {
     setLoadng(true);
     const requestParam = {
       method: "get",
-      url: "http://localhost:8001/hotels",
+      url: "https://tripvillas-backend.herokuapp.com/hotels",
     };
     axios(requestParam)
       .then((response) => {

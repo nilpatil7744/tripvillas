@@ -29,7 +29,7 @@ function Map2() {
   const handleLocation = () => {
     setLoadng(true);
     axios
-      .get(`http://localhost:8001/hotels?city=${location || loadData("locn")}`)
+      .get(`https://tripvillas-backend.herokuapp.com/hotels?city=${location || loadData("locn")}`)
       .then((response) => {
         setInfo(response.data.data);
       })

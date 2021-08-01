@@ -76,7 +76,7 @@ export default function MapLocation(props) {
     const pricingAction = setPriceVariables(payload);
     dispatch(pricingAction);
     axios
-      .get(`http://localhost:8001/hotels?city=${query || loadData("locn")}`)
+      .get(`https://tripvillas-backend.herokuapp.com/hotels?city=${query || loadData("locn")}`)
       .then((res) => {
         setInfo(res.data.data);
       })
@@ -97,7 +97,7 @@ export default function MapLocation(props) {
     setisError(false);
     axios
       .get(
-        `http://localhost:8001/hotels?city=${
+        `https://tripvillas-backend.herokuapp.com/hotels?city=${
           location || loadData("locn")
         }&sort=${sort}`
       )
