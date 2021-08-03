@@ -58,9 +58,15 @@
 
 ![RajattripvillasHead](https://user-images.githubusercontent.com/77038652/127957535-8ed98178-5ef4-4429-9dde-034716e42eb3.png)
 
+<hr/>
+
 ![extra page](https://user-images.githubusercontent.com/77038652/127958593-8869ee24-df31-41cf-b964-de65105f13fc.png)
 
+<hr/>
+
 ![3rd](https://user-images.githubusercontent.com/77038652/127958898-c2e03b54-81ce-4d11-a4ac-87270c1b4bc9.png)
+
+<hr/>
 
 ![4](https://user-images.githubusercontent.com/77038652/127958904-6cf1b5cd-25ca-4621-9e83-3f7ba0e77c8c.png)
 
@@ -71,11 +77,9 @@
 
 ![LogInTripvillas](https://user-images.githubusercontent.com/77038652/127958506-492e06af-1bc1-43e3-ba8d-ba1ec6bc51cc.png)
 
-#### 3.  Search for hotel location in search box for location with date and members.
 
-![guestsearch](https://user-images.githubusercontent.com/77038652/127959416-339bba81-23aa-4564-89f2-f22537947ae0.png)
 
-#### 4.  select hotel for goa and can update in modify search.
+#### 4.  selectd hotel for goa and can update in modify search.
 
 ![Goaa data](https://user-images.githubusercontent.com/77038652/127959415-7336f4a5-a7fe-4ad8-a7e9-7f901047f99f.png)
 
