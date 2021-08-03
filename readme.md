@@ -106,7 +106,11 @@
 - Prashanth Vengala : [@Prashanth Vengala](https://github.com/prashantvengala)
 ### We, as a team have replicated [Tripvillas.com](www.tripvillas.com) and tried our level best to implement most of its features using React and Redux.
 
-  
+## Demo 🎥
+
+[Tripvillas_clone](https://dms.licdn.com/playlist/C4D05AQFKYLB82kCkaA/mp4-720p-30fp-crf28/0/1624376761001?e=1628056800&v=beta&t=00I_M8Hlq9oOK6oPZOiiWAgzbWIY3H0KnGasQrRvdi0)
+
+<br>
 
   
 ![Logo](https://d2v8elt324ukrb.cloudfront.net/static/riotuikit/images/logo.c72056a22f91.png)
